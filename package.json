@@ -1,0 +1,25 @@
+{
+    "name": "airBarnBats",
+    "version": "1.0.0",
+    "description": "airBarnBats",
+    "main": "index.js",
+    "scripts": {
+        "install": "npm --prefix backend install backend",
+        "dev:backend": "npm install --prefix backend start",
+        "sequelize": "npm run --prefix backend sequelize",
+        "sequelize-cli": "npm run --prefix backend sequelize-cli",
+        "start": "npm start --prefix backend",
+        "build": "npm run --prefix backend build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/di3italis/airBarnBats.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/di3italis/airBarnBats/issues"
+    },
+    "homepage": "https://github.com/di3italis/airBarnBats#readme"
+}

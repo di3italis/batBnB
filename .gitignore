@@ -1,0 +1,9 @@
+gitignore/
+node_modules
+.env
+build
+.DS_Store
+*.db
+_graveyard.js
+TEST*
+NEW*
