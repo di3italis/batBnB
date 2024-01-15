@@ -16,6 +16,7 @@ const removeUser = () => {
   };
 };
 
+// THUNKS
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch("/api/session", {
@@ -28,6 +29,13 @@ export const login = (user) => async (dispatch) => {
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
+};
+
+export const restoreUser = () => async (dispatch) => {
+  const res = await csrfFetch('/api/session');
+  const data = await res.json();
+  dispatch(setUser(data.user));
+  return res;
 };
 
 const initialState = { user: null };
