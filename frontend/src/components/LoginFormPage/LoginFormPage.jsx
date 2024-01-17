@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import './LoginFormPage.jsx'
+import './LoginForm.css'
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ function LoginFormPage() {
 	    required
 	  />
 	</label>
-	{errors.credential && <p>{errors.credential}</p> }
+	{errors.credential && <p>{errors.credential}</p>}
       <button type="submit">Log In</button>
       </form>
     </>
