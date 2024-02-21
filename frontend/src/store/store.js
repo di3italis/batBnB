@@ -6,11 +6,11 @@ const rootReducer = combineReducers({
 	session: sessionReducer
 })
 
-
 const configureStore = async (preloadedState) => {
   let enhancer;
 
-  if (process.env.NODE_ENV === 'production') {
+  if (import.meta.env.MODE === 'production') {
+  // if (process.env.NODE_ENV === 'production') {
     enhancer = applyMiddleware(thunk);
   } else {
     const reduxLogger = await import('redux-logger');
