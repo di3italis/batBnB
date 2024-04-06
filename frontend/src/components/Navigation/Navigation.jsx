@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import * as sessionActions from "./../../store.session";
+import * as sessionActions from "../../store/session";
 
 function Navigation({ isLoaded } ) {
    const sessionUser = useSelector(state => state.session.user);
-    const dispatch useDispatch();
+    const dispatch = useDispatch();
 
-    cost logout = (e) => {
+    const logout = (e) => {
         e.preventDefault();
         dispatch(sessionActions.logout());
     };
@@ -43,3 +43,4 @@ function Navigation({ isLoaded } ) {
 }
 
 export default Navigation;
+

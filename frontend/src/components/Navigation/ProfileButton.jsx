@@ -1,7 +1,7 @@
 function ProfileButton() {
-  render (
+  return (
     <div style={{ color: "pink", fontSize: "100px" }}>
-      <i class="fa-regular fa-user"></i>
+      <i classname="fa-regular fa-user"></i>
     </div>
   );
 };
