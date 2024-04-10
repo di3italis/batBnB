@@ -56,7 +56,7 @@ router.get("/", queryParams, handleValidationErrors, async (req, res) => {
         let getSpots = {};
         //? if queryParams, use those
         if (Object.keys(req.query).length > 0) {
-            console.log("\n<----  QUERY PARAMS  ---->", req.query, "\n");
+            // console.log("\n<----  QUERY PARAMS  ---->", req.query, "\n");
             getSpots = await Spot.findAll(queryOptions);
         }
         //? else, regular get all spots
@@ -204,7 +204,7 @@ router.get(
         // console.log(spotId);
         try {
             const { spotId } = req.params;
-            console.log("--------> testing get spot by id:", spotId);
+            // console.log("--------> testing get spot by id:", spotId);
             const spotsByID = await Spot.findByPk(spotId, {
                 attributes: [
                     "id",

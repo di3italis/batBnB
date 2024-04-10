@@ -1,0 +1,70 @@
+/* TODO: Add sitewide styles */
+body {
+  background-color: #181A1B;
+  color: white;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; /* this is the layer front to back, lower numbers are in the back */
+}
+
+#logo {
+	height: 80px;
+	margin: 20px;
+	display: absolute;
+}
+
+h1 {
+	color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+div {
+  background-color: #181A1B;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+a, button, .clickable, .clickable:hover {
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+form {
+  /* background-color: #181A1B; */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: linear-gradient(to left, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); 
+  border-radius: 20px;
+}
+
+#modal-content {
+  background-color: #181A1B;
+  border-radius: 20px;
+}
+
+#modal {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+/* #modal-background { */
+/* 	background: linear-gradient(to left, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%);  */
+/* } */
+
+input, input[type], textarea, select {
+  color: white; /* Change color to dark gray */
+  background-color: rgba(0, 0, 0, 0); /* Change background color to light gray */
+  /* background-color: #f0f0f0; /* Change background color to light gray */ 
+  border: 1px solid #ccc; /* Add a border */
+  border-image: linear-gradient(to right, black 20%, transparent 80%) 5;
+}

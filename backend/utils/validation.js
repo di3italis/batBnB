@@ -46,7 +46,7 @@ const handleValidationErrors = (req, _res, next) => {
         // if error stack, create empty accumulator object, turn Result into array, reduce array into the current field of accumulator object -> keys(params aka field) and values(value of current error being accumulated)
         // console.log("_______validationErrors object:", validationErrors);
         const errors = validationErrors.array().reduce((accumulator, error) => {
-            console.log("current accumulator:", accumulator);
+            // console.log("current accumulator:", accumulator);
             if (!accumulator.param) {
                 // if accumulator doesn't have a key of error.param, create one and set it to an empty object
                 accumulator[error.param] = {};
@@ -105,6 +105,8 @@ const validateUser = [
     //     }
     //   }),
     body("username", "Username is required").not().isEmpty(),
+    body("username", "Username must be 4 or more characters long").isLength({ min: 4 }), // added 240410
+
     //   body('username').custom(async (username) => {
     //     const existingUser = await User.findOne({ where: { username } });
     //     if (existingUser) {

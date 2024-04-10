@@ -1,0 +1,45 @@
+.hidden {
+	display: none;
+}
+
+#dookie {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	border-radius: 10px;
+	background-color: #007bff;
+	/* background-color: #181A1B; */
+  z-index: 2; /* this is the layer front to back, lower in the back */
+}
+
+#dookie:hover {
+	background-color: #45a049;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(8%); /* Position the dropdown content below the profile button */
+  right: 0; /* Position the dropdown content to the right */
+  background-color: lightgrey;
+  /* background-color: #181A1B; */
+  border-radius: 10px;
+  /* border: 1px solid #ccc; */
+  width: 200px;
+  background: linear-gradient(to left, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 80%); 
+  z-index: 2; /* this is the layer front to back, lower in the back */
+}
+
+.profile-dropdown li {
+  list-style: none;
+  margin: 10px;
+  z-index: 2; /* this is the layer front to back, lower in the back */
+}
+
+h1 {
+  background-color: #181A1B;
+  color: white;
+}
+
+div {
+  background-color: #181A1B;
+}
