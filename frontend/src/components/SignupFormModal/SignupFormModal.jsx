@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
-import './SignupFormPage.css'
+import './SignupFormModal.css'
 
 
-function SignupFormPage() {
+function SignupFormModal() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -113,5 +113,5 @@ function SignupFormPage() {
   )
 };
 
-export default SignupFormPage;
+export default SignupFormModal;
 

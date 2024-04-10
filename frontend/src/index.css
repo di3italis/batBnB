@@ -1,1 +1,54 @@
 /* TODO: Add sitewide styles */
+body {
+  background-color: #181A1B;
+  color: white;
+}
+
+h1 {
+	color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+div {
+  background-color: #181A1B;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+button {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+form {
+	  /* background-color: #181A1B; */
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+	background: linear-gradient(to left, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%); 
+  border-radius: 20px;
+}
+
+#modal-content {
+  background-color: #181A1B;
+  border-radius: 20px;
+}
+
+#modal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-background {
+	background: linear-gradient(to left, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%); 
+}
+
+input, input[type], textarea, select {
+  color: white; /* Change color to dark gray */
+  background-color: rgba(0, 0, 0, 0); /* Change background color to light gray */
+  /* background-color: #f0f0f0; /* Change background color to light gray */ 
+  border: 1px solid #ccc; /* Add a border */
+  border-image: linear-gradient(to right, black 20%, transparent 80%) 5;
+}

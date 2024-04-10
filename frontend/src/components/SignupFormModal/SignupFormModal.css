@@ -1,5 +1,5 @@
 /* Basic styling for the entire page */
-.SignupFormPage {
+.SignupFormModal{
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -42,7 +42,7 @@ input[type="email"] {
 
 /* Styling for the submit button */
 button {
-    width: 100%;
+    width: 100px; /* this automatically change signup too!!! may need to make this more programatic */
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
