@@ -26,17 +26,17 @@ export const login = (user) => async (dispatch) => {
   // Destructuring to get credentials from the user object
   const { credential, password } = user;
   // Making a POST request to the server's login endpoint
-  const response = await csrfFetch("/api/session", {
+  const res = await csrfFetch("/api/session", {
     method: "POST",
     body: JSON.stringify({
       credential,
       password
     })
   });
-  const data = await response.json();
+  const data = await res.json();
   // Dispatching setUser action with the logged-in user data
   dispatch(setUser(data.user));
-  return response;
+  return res;
 };
 
 // Thunk action for restoring a user session

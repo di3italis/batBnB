@@ -105,6 +105,8 @@ const validateUser = [
     //     }
     //   }),
     body("username", "Username is required").not().isEmpty(),
+    body("username", "Username must be 4 or more characters long").isLength({ min: 4 }), // added 240410
+
     //   body('username').custom(async (username) => {
     //     const existingUser = await User.findOne({ where: { username } });
     //     if (existingUser) {

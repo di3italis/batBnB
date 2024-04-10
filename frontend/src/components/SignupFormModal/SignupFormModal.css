@@ -43,7 +43,8 @@ input[type="email"] {
 /* Styling for the submit button */
 button {
     width: 100px; /* this automatically change signup too!!! may need to make this more programatic */
-    background-color: #4CAF50;
+    /* background-color: #007bff; */
+    /* background-color: #4CAF50; */
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
