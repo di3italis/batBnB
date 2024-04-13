@@ -3,6 +3,14 @@ xsrftoken
 var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");
 postman.setEnvironmentVariable('xsrftoken', xsrfCookie.value);
 
+## Phase 3: Setting up your Postgres database
+npm install && 
+npm run build && 
+npm run sequelize --prefix backend db:seed:undo:all && 
+npm run sequelize --prefix backend db:migrate:undo:all && 
+npm run sequelize --prefix backend db:migrate && 
+npm run sequelize --prefix backend db:seed:all
+
 ## Ongoing Maintenance
 The main limitation of the free Render Postgres database instance is that it will be deleted after 90 days. In order to keep your application up and running, you MUST create a new database instance before the 90 day period ends.
 

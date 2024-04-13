@@ -99,13 +99,13 @@ module.exports = {
             {
                 imageableType: "Spot",
                 imageableId: 1,
-                url: "https://airBarnBats.com/Spot1.jpg",
+                url: "https://www.flickr.com/photos/deftpunk/15056847970/in/dateposted-public/",
                 preview: true,
             },
             {
                 imageableType: "Spot",
                 imageableId: 2,
-                url: "https://airBarnBats.com/Spot1.jpg",
+                url: "https://www.flickr.com/photos/deftpunk/15056844530/in/dateposted-public/",
                 preview: true,
             },
             {

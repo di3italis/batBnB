@@ -21,5 +21,8 @@
     "bugs": {
         "url": "https://github.com/di3italis/airBarnBats/issues"
     },
-    "homepage": "https://github.com/di3italis/airBarnBats#readme"
+    "homepage": "https://github.com/di3italis/airBarnBats#readme",
+    "dependencies": {
+        "react-icons": "^5.0.1"
+    }
 }
