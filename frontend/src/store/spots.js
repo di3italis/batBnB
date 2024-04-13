@@ -45,19 +45,20 @@ export const getSpotsThunk = () => async (dispatch) => {
 };
 
 export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
-  try {
+  // try {
     const res = await csrfFetch(`/api/spots/${spotId}`);
     if (res.ok) {
       const data = await res.json();
       dispatch(getSpotDetails(data));
-    } else {
-      throw res;
-    }
-  }
-  catch (error) {
-    const errorData = await res.json();
-    dispatch(error(errorData));
-  }
+     } 
+  //   else {
+  //     throw res;
+  //   }
+  // }
+  // catch (error) {
+  //   const errorData = await res.json();
+  //   dispatch(error(errorData));
+  // }
 }
 
 const initialState = { Spots: {}, SpotDetails: {}, loading: false, error: null};

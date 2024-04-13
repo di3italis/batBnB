@@ -1,5 +1,4 @@
 // SpotCard.js
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import styles from '../ComponentsCss.module.css';
@@ -30,4 +29,3 @@ const SpotCard = ({ spot }) => {
 };
 
 export default SpotCard;
-

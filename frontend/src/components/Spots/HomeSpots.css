@@ -1,51 +1,49 @@
 * {
-  /* box-sizing: border-box; */
-  margin: 0;
-  padding: 0;
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-  --padding: 1rem;
-  --margin-top-bottom: 1rem;
+    --padding: 1rem;
+    --margin-top-bottom: 1rem;
 }
 
 .react-app {
-  padding: var(--padding);
-
+    padding: var(--padding);
 }
 
 #main {
-  border: 1px solid red;
+    border: 1px solid red;
 }
 
 .spot-tile-container {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  width: 20rem;
-  height: 30rem;
-
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 20rem;
+    height: 30rem;
 }
 
 .spot-tile {
-  width: calc(25% - 50px);
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 18px;
-  /* background-color: white */
+    width: calc(25% - 50px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 18px;
+    /* background-color: white */
 }
 
 .spot-tile img {
-  width: 100%;
-  height: 100%;
-  /* object-fit: cover; */
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    overflow: hidden;
 }
 
 .bat-star {
-  color: yellow;
+    color: yellow;
 }
 
 /**/
@@ -54,8 +52,8 @@
 /*     grid-template-columns: repeat(auto-fit, minmax(var(--tile-width), 1fr)); */
 /*     gap: var(--gap-size); */
 /*     justify-content: center; */
-/*     max-width: calc(4 * var(--tile-width) + 3 * var(--gap-size)); /* max 4 columns */ */
-/*     margin: auto; /* This centers the container */ */
+/*     max-width: calc(4 * var(--tile-width) + 3 * var(--gap-size)); /* max 4 columns */
+/*     margin: auto; /* This centers the container */
 /* } */
 /**/
 /* .spot-tile-container { */
