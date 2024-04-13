@@ -1,4 +1,20 @@
-/* TODO: Add sitewide styles */
+:root { /* These are CSS global variables
+	 use them like this: 
+	 color: var(--primary-color)
+	 */
+
+	--primary-color: skyblue;
+	--secondary-color: #181A1B;
+	--tertiary-color: skyblue;
+	--quaternary-color: skyblue;
+	--quinary-color: skyblue;
+	--senary-color: skyblue;
+	--septenary-color: skyblue;
+	--octonary-color: skyblue;
+	--nonary-color: skyblue;
+	--denary-color: skyblue;
+}
+
 body {
   background-color: #181A1B;
   color: white;

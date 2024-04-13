@@ -1,0 +1,111 @@
+/* SpotsHomePage.module.css */
+.spotsList {
+  border: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+}
+
+.spot {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+}
+
+.spotImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.spotDetails {
+  padding: 8px;
+}
+
+.spotName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.spotLocation {
+  font-size: 1rem;
+  color: #666;
+}
+
+.spotPrice {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+
+/* SpotsHomePage.module.css */
+.spotsHomePageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* SpotCard.module.css */
+.spotCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.spotInfo {
+  padding: 8px;
+}
+
+.spotInfoTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: gold;
+}
+
+.spotInfoBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.perNight {
+  font-size: 0.8em;
+  color: #555;
+}
+

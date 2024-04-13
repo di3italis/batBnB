@@ -1,23 +1,33 @@
 import { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
-import './LoginFormModal.css'
+import { useModal } from '../../context/Modal';
+// import './LoginFormModal.css'
+import '../../context/Modal.css'
+
 
 function LoginFormModal() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const { closeModal } = useModal();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors({});
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-      const data = await res.json();
-	if (data?.errors) setErrors(data.errors);
-      }
-    );
+    return dispatch(
+      sessionActions.login({ 
+      credential,
+      password 
+      }))
+      .then(closeModal)
+      .catch(async (res) => {
+	const data = await res.json();
+	console.log("DATA!!!:", data)
+	if (data?.message) setErrors({ message: data.message });
+      });
+    return setErrors
   };
 
   return(
@@ -32,6 +42,7 @@ function LoginFormModal() {
 	    onChange={(e) => setCredential(e.target.value)}
 	    required
 	  />
+
 	</label>
 	<label>
 	  Password
@@ -42,11 +53,13 @@ function LoginFormModal() {
 	    required
 	  />
 	</label>
-	{errors.credential && <p>{errors.credential}</p>}
+      <div className="login-error">
+	{errors.message && <p>The provided credentials were invalid</p>}
+      </div>
       <button type="submit">Log In</button>
       </form>
     </>
   )
-}
+};
 
 export default LoginFormModal;
