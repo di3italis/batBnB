@@ -45,20 +45,23 @@ export const getSpotsThunk = () => async (dispatch) => {
 };
 
 export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
-  // try {
+  try {
     const res = await csrfFetch(`/api/spots/${spotId}`);
     if (res.ok) {
       const data = await res.json();
+      console.log("getSpotDetailsThunk data:", data);
       dispatch(getSpotDetails(data));
+         return data;
      } 
-  //   else {
-  //     throw res;
-  //   }
-  // }
-  // catch (error) {
-  //   const errorData = await res.json();
-  //   dispatch(error(errorData));
-  // }
+    else {
+         console.log("NOT GETTING SPOT DETAILS");
+      throw res;
+    }
+  }
+  catch (error) {
+    const errorData = await res.json();
+    dispatch(error(errorData));
+  }
 }
 
 const initialState = { Spots: {}, SpotDetails: {}, loading: false, error: null};
@@ -83,6 +86,7 @@ const spotsReducer = (state = initialState, action) => {
     //   return spotsById;
     // }
     case GET_SPOT_DETAILS: {
+         console.log("GET_SPOT_DETAILS action.payload:", action.payload);
       const id = action.payload.id;
       return { ...state, SpotDetails: { ...state.SpotDetails, [id]: action.payload}, loading: false};
     }

@@ -64,9 +64,33 @@
 }
 
 .imageContainer {
+   position: relative;
+   display: inline-block;
   width: 100%;
   height: 200px;
   overflow: hidden;
+}
+
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 1;
+   /* Fade in tooltip */
+  opacity: 0;
+}
+
+.imageContainer:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .imageContainer img {
@@ -108,4 +132,49 @@
   font-size: 0.8em;
   color: #555;
 }
+
+/* SpotDetailsPage.module.css */
+.spotDetailContainerr {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.spotDetailsImage {
+  width: 50%;
+}
+
+.spotDetailsImage img {
+  width: 100%;
+  height: auto;
+}
+
+.spotDetailsInfo {
+  width: 50%;
+}
+
+.spotDetailsInfo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.spotDetailsInfo p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.spotDetailsInfo .rating {
+  display: flex;
+  align-items: center;
+}
+
+.spotDetailsInfo .star {
+  color: gold;
+}
+
+.spotDetailsInfo .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}  
+
 
