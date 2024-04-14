@@ -99,13 +99,13 @@ module.exports = {
             {
                 imageableType: "Spot",
                 imageableId: 1,
-                url: "https://www.flickr.com/photos/deftpunk/15056847970/in/dateposted-public/",
+                url: "https://media.architecturaldigest.com/photos/64dbbaf1be7a08b03e6cd3a8/16:9/w_2240,c_limit/580%20Brickyard%201.jpeg",
                 preview: true,
             },
             {
                 imageableType: "Spot",
                 imageableId: 2,
-                url: "https://www.flickr.com/photos/deftpunk/15056844530/in/dateposted-public/",
+               url: "https://a.cdn-hotels.com/gdcs/production79/d1857/e1db9533-f687-407a-904c-3d1bdf58a583.jpg?impolicy=fcrop&w=1600&h=1066&q=medium",
                 preview: true,
             },
             {
