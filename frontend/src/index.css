@@ -2,7 +2,7 @@
 	 use them like this: 
 	 color: var(--primary-color)
 	 */
-
+display: flex;
 	--primary-color: skyblue;
 	--secondary-color: #181A1B;
 	--tertiary-color: skyblue;
@@ -15,7 +15,21 @@
 	--denary-color: skyblue;
 }
 
+/* * { */
+/*   box-sizing: border-box; */
+/*   display: flex; */
+/*   margin: 0; */
+/*   padding: 0; */
+/* } */
+html {
+   display: flex;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  color: white;
+}
 body {
+   display: flex;
   background-color: #181A1B;
   color: white;
 }
