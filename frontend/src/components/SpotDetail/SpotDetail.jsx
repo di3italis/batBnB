@@ -8,25 +8,25 @@ import styles from '../ComponentsCss.module.css';
 export default function SpotDetail() {
    const { spotId } = useParams();
    const mySpotId = Number(spotId);
-   const state = useSelector((state) => state);
+   // const state = useSelector((state) => state);
     const spot = useSelector((state) => state.spots.SpotDetails[mySpotId]);
    const currentUser = useSelector((state) => state.session.user);
    
    console.log("spotId:", spotId);
    console.log("spot:", mySpotId);
    console.log("currentUser:", currentUser);
-   console.log("state.spots:", state.spots);
-   console.log("state.spots.SpotDetails", state.spots.SpotDetails);
+   // console.log("state.spots:", state.spots);
+   // console.log("state.spots.SpotDetails", state.spots.SpotDetails);
    
     const dispatch = useDispatch();
 
-    useEffect(() => {
-         dispatch(spotActions.getSpotsThunk()) 
-    }, [dispatch]);
+    // useEffect(() => {
+    //      dispatch(spotActions.getSpotsThunk()) 
+    // }, [dispatch]);
 
     useEffect(() => {
          dispatch(spotActions.getSpotDetailsThunk(mySpotId)) 
-    }, [dispatch, mySpotId]);
+    }, [dispatch]);
 
     if (!spot) {
         return <div>Spot not found</div>;
@@ -39,7 +39,7 @@ export default function SpotDetail() {
             </div>
             <div className={styles.spotInfo}>
                 <div className={styles.spotInfoTop}>
-                    <span>{spot.city}, {spot.state}</span>
+                    <span>{spot.city}, {spot.country}</span>
                     <span className={styles.rating}>
                         <TbBat className={styles.star} />
                         {spot.avgRating.toFixed(1)}

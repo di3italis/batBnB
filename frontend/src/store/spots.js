@@ -69,22 +69,27 @@ const initialState = { Spots: {}, SpotDetails: {}, loaded: false, error: null};
 const spotsReducer = (state = initialState, action) => {
   // console.log("spotsReducer action:", action);
   switch (action.type) {
+  //   case GET_SPOTS: {
+  //     const spotsById = action.payload.reduce((acc, spot) => {
+  //       acc[spot.id] = spot;
+  //       return acc;
+  //     }, {});
+  //     console.log("spotsById:", spotsById);
+  //     return { ...state, Spots: spotsById, loaded: true};
+  //   }
+
     case GET_SPOTS: {
-      const spotsById = action.payload.reduce((acc, spot) => {
-        acc[spot.id] = spot;
-        return acc;
-      }, {});
+         console.log("GET_SPOTS action.payload:", action.payload);
+      const spotsById  = {};
+        action.payload.forEach(spot => {
+        spotsById[spot.id] = spot;
+      })
+
       console.log("spotsById:", spotsById);
+
       return { ...state, Spots: spotsById, loaded: true};
     }
-    // case GET_SPOTS: {
-    //   const spotsById =  { ...state, Spots: state.Spots, loading: true};
-    //   // console.log("spotsById:", spotsById);
-    //   action.payload.forEach(spot => {
-    //     spotsById[spot.id] = spot;
-    //   })
-    //   return spotsById;
-    // }
+
     case GET_SPOT_DETAILS: {
          console.log("GET_SPOT_DETAILS action.payload:", action.payload);
       const id = action.payload.id;
