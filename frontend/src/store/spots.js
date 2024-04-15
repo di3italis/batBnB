@@ -31,7 +31,7 @@ export const getSpotsThunk = () => async (dispatch) => {
     const res = await csrfFetch('/api/spots');
     if (res.ok) {
       const data = await res.json();
-      console.log("getSpotsThunk data.Spots:", data.Spots);
+      // console.log("getSpotsThunk data.Spots:", data.Spots);
       dispatch(getSpots(data.Spots));
     } 
   //  else {
@@ -64,7 +64,8 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
   }
 }
 
-const initialState = { Spots: {}, SpotDetails: {}, loaded: false, error: null};
+// const initialState = { Spots: {}, SpotDetails: {}, loaded: false, error: null};
+const initialState = {};
 
 const spotsReducer = (state = initialState, action) => {
   // console.log("spotsReducer action:", action);
@@ -77,23 +78,37 @@ const spotsReducer = (state = initialState, action) => {
   //     console.log("spotsById:", spotsById);
   //     return { ...state, Spots: spotsById, loaded: true};
   //   }
+    //
+    // case GET_SPOTS: {
+    //      console.log("GET_SPOTS action.payload:", action.payload);
+    //   const spotsById  = {};
+    //     action.payload.forEach(spot => {
+    //     spotsById[spot.id] = spot;
+    //   })
+    //
+    //   console.log("spotsById:", spotsById);
+    //
+    //   return { ...state, Spots: spotsById, loaded: true};
+    // }
 
     case GET_SPOTS: {
          console.log("GET_SPOTS action.payload:", action.payload);
-      const spotsById  = {};
+         console.log("state:", state);
+      const newState = {...state /*, spots: {...state.spots} */};
+         console.log("newState:", newState);
         action.payload.forEach(spot => {
-        spotsById[spot.id] = spot;
+        newState[spot.id] = spot;
       })
 
-      console.log("spotsById:", spotsById);
+      console.log("newState:", newState);
 
-      return { ...state, Spots: spotsById, loaded: true};
+      return newState;
     }
 
     case GET_SPOT_DETAILS: {
          console.log("GET_SPOT_DETAILS action.payload:", action.payload);
       const id = action.payload.id;
-      return { ...state, SpotDetails: { ...state.SpotDetails, [id]: action.payload}, loaded: true};
+      return { ...state, [id]: action.payload};
     }
     case ERROR: {
       return { ...state, error: action.error, loading: false};

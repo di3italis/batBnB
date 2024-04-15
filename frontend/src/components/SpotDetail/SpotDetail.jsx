@@ -9,7 +9,7 @@ export default function SpotDetail() {
    const { spotId } = useParams();
    const mySpotId = Number(spotId);
    // const state = useSelector((state) => state);
-    const spot = useSelector((state) => state.spots.SpotDetails[mySpotId]);
+    const spot = useSelector((state) => state.spots[mySpotId]);
    const currentUser = useSelector((state) => state.session.user);
    
    console.log("spotId:", spotId);

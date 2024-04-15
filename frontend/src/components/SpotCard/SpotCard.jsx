@@ -13,7 +13,7 @@ const SpotCard = ({ spot }) => {
              <div className={styles.topRow}>
                <h3>{spot.city}, {spot.state}</h3>
                <div className={styles.rating}>
-                  <span className={styles.star}><TbBat /></span>{spot.avgRating.toFixed(1)}
+                  <span className={styles.star}><TbBat /></span>{spot.avgRating}
                </div>
              </div>
              <div className={styles.bottomRow}>

@@ -7,12 +7,14 @@ import styles from './HomeSpots.module.css';
 export default function HomeSpots() {
     const dispatch = useDispatch();
     const spots = useSelector((state) => state.spots);
-    const [loaded, setLoaded] = useState(false);
+    // const [loaded, setLoaded] = useState(false);
+   
+   console.log("spots:", spots);
 
     useEffect(() => {
         dispatch(getSpotsThunk())
-      .then(() => setLoaded(true))
-    }, [dispatch, loaded]);
+      // .then(() => setLoaded(true))
+    }, [dispatch]);
 
     // console.log("spot 1:", spots[1]);
 
@@ -23,7 +25,7 @@ export default function HomeSpots() {
 
     return (
         <div className={styles.main}>
-            {Object.values(spots.Spots).map((spot) => (
+            {Object.values(spots).map((spot) => (
                 <SpotCard key={spot.id} spot={spot} />
             ))}
         </div>
