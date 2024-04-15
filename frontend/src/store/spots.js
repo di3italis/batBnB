@@ -64,7 +64,7 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
   }
 }
 
-const initialState = { Spots: {}, SpotDetails: {}, loading: false, error: null};
+const initialState = { Spots: {}, SpotDetails: {}, loaded: false, error: null};
 
 const spotsReducer = (state = initialState, action) => {
   // console.log("spotsReducer action:", action);
@@ -75,7 +75,7 @@ const spotsReducer = (state = initialState, action) => {
         return acc;
       }, {});
       console.log("spotsById:", spotsById);
-      return { ...state, Spots: spotsById, loading: false};
+      return { ...state, Spots: spotsById, loaded: true};
     }
     // case GET_SPOTS: {
     //   const spotsById =  { ...state, Spots: state.Spots, loading: true};
@@ -88,7 +88,7 @@ const spotsReducer = (state = initialState, action) => {
     case GET_SPOT_DETAILS: {
          console.log("GET_SPOT_DETAILS action.payload:", action.payload);
       const id = action.payload.id;
-      return { ...state, SpotDetails: { ...state.SpotDetails, [id]: action.payload}, loading: false};
+      return { ...state, SpotDetails: { ...state.SpotDetails, [id]: action.payload}, loaded: true};
     }
     case ERROR: {
       return { ...state, error: action.error, loading: false};

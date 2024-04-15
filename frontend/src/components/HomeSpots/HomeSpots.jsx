@@ -2,18 +2,16 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSpotsThunk } from "../../store/spots";
 import SpotCard from "../SpotCard"; 
-import { Link } from 'react-router-dom';
-import { TbBat } from "react-icons/tb";
 import styles from './HomeSpots.module.css';
 
 export default function HomeSpots() {
     const dispatch = useDispatch();
     const spots = useSelector((state) => state.spots);
-    const [loaded, setLoaded] = useState(false);
+    // const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         dispatch(getSpotsThunk())
-      .then(() => setLoaded(true))
+      // .then(() => setLoaded(true))
     }, [dispatch]);
 
     // console.log("spot 1:", spots[1]);
