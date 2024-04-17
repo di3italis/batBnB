@@ -18,6 +18,8 @@ export const getSpotDetails = (payload) => {
   }
 };
 
+
+
 // need separate error actions for each fetch
 export const error = (error) => {
   return {
@@ -51,7 +53,6 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
       const data = await res.json();
       console.log("getSpotDetailsThunk data:", data);
       dispatch(getSpotDetails(data));
-         return data;
      } 
     else {
          console.log("NOT GETTING SPOT DETAILS");
@@ -63,6 +64,8 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
     dispatch(error(errorData));
   }
 }
+
+
 
 // const initialState = { Spots: {}, SpotDetails: {}, loaded: false, error: null};
 const initialState = {};
@@ -113,6 +116,8 @@ const spotsReducer = (state = initialState, action) => {
     case ERROR: {
       return { ...state, error: action.error, loading: false};
     }
+
+
     default:
       return state;
   }

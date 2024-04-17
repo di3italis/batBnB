@@ -1,4 +1,5 @@
-#modal {
+.modal {
+  background-color: rgba(0, 0, 0, .5);
   position: fixed;
   top: 0;
   right: 0;
@@ -9,18 +10,21 @@
   align-items: center;
 }
 
-#modal-background {
+.modalBackground {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
+	background: linear-gradient(to left, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); 
 }
 
-#modal-content {
+.modalContent {
+  background-color: #181A1B;
+  border-radius: 20px;
   position: absolute;
-  background-color: white;
+  /* background-color: black; */
 }
 
 /* Path: SignupFormModal.css */
@@ -35,11 +39,12 @@
 
 /* Styling for the form */
 form {
-    background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    background: linear-gradient(to left, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); 
+    border-radius: 20px;
 }
 
 h1 {
@@ -57,8 +62,10 @@ li {
 /* Styling for form fields */
 label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: lighter;
 }
 
 input[type="text"],
@@ -73,16 +80,11 @@ input[type="email"] {
     box-sizing: border-box;
 }
 
-.login-error {
-  position: relative;
-  background-color: rgba(0,0,0,0);
-  margin: 10px 0 10px 0;
-  padding: 10px 0 20px 0;
-}
 
 /* Styling for the submit button */
 button {
     width: 100px;
+    height: 40px;
     background-color: #007bff;
     /* background-color: #4CAF50; */
     color: white;
@@ -98,10 +100,16 @@ button:hover {
 }
 
 /* Error message styling */
-p {
+.loginError {
+  position: relative;
+  background-color: rgba(0,0,0,0);
+  margin: 0px 0 10px 0;
+  padding: 0 0 20px 0;
+}
+
+e {
     position: absolute;
     color: red;
-    margin: 0px;
 }
 
 /* Adjust the form item list */

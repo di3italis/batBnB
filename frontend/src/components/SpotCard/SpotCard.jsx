@@ -8,7 +8,7 @@ const SpotCard = ({ spot }) => {
   return (
     <div className={styles.card}>
       <Link to={`/spots/${spot.id}`}>
-         <img src={spot.previewImage} alt={spot.name} title="SHOW ME YOUR TIPS!!!" className={styles.image} />
+         <img src={spot.previewImage} alt={spot.name} title={spot.name} className={styles.image} />
          <div className={styles.info}>
              <div className={styles.topRow}>
                <h3>{spot.city}, {spot.state}</h3>

@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 // import './LoginFormModal.css'
-import "../../context/Modal.css";
+import styles from "../../context/Modal.module.css";
 
 function LoginFormModal() {
     const dispatch = useDispatch();
@@ -52,9 +52,9 @@ function LoginFormModal() {
                         required
                     />
                 </label>
-                <div className="login-error">
+                <div className={styles.loginError}>
                     {errors.message && (
-                        <p>The provided credentials were invalid</p>
+                        <e>The provided credentials were invalid</e>
                     )}
                 </div>
                 <button type="submit">Log In</button>

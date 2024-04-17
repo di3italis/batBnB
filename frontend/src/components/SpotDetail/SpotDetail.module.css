@@ -1,0 +1,121 @@
+/* SpotDetail.module.css */
+.spotDetailContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.spotName {
+    text-align: left;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.location {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.imageGallery {
+    display: flex;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+.mainImage {
+    flex: 1;
+    background: black;
+}
+
+.mainImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* margin-right: 8px; */
+}
+
+.sideImages {
+    /* background: red; */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+    grid-template-rows: 1fr 1fr; /* Rows set to auto to adjust to content's height */
+    gap: 8px; /* Gap between the grid items */
+    flex: 1; /* This can be removed if .sideImages is no longer a flex item */
+}
+
+/* Ensure that the images within .sideImages don't exceed their container */
+.sideImages img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will cover the grid area without distorting the image aspect ratio */
+}
+
+.hostedBy {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.description {
+    display: inline-grid;
+    margin-bottom: 16px;
+    padding: 16px 0;
+}
+
+.priceResContainer {
+   border: 1px solid #ddd; 
+   border-radius: 8px;
+   width: 100px;
+   height: 50px;
+}
+
+.reviews {
+    box-sizing: border-box;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px;
+}
+
+.rating {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.newReviewContainer {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.reviewEntry {
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+    padding-top: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.reviewEntry:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin: 0.1rem;
+}
+
+.reviewBody {
+    box-sizing: border-box;
+    margin: 8px;
+}
+
+/* Add responsive design rules */
+@media (max-width: 768px) {
+    .imageGallery {
+        flex-direction: column;
+    }
+
+    .mainImage,
+    .sideImages {
+        margin-right: 0;
+    }
+}
