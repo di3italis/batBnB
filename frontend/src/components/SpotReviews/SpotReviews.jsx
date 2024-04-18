@@ -7,17 +7,18 @@ import "./SpotReviews.module.css";
 export default function SpotReviews() {
     const { spotId } = useParams();
     const mySpotId = Number(spotId);
-    const reviews = useSelector((state) => state.reviews.reviews);
+    const reviews = useSelector((state) => state.reviews);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(reviewActions.getReviewsThunk(mySpotId));
-    }, [dispatch, mySpotId]);
+    }, [dispatch, spotId]);
 
     if (!reviews) {
         return <div>Reviews not found</div>;
     }
 
+    console.log("reviews:", reviews);
     return (
         <div>
             {Object.values(reviews).map((review) => (
