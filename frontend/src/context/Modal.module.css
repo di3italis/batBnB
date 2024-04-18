@@ -39,7 +39,7 @@
 
 /* Styling for the form */
 form {
-    padding: 20px;
+    padding: .1em 1em;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -55,8 +55,7 @@ h1 {
 li {
     position: relative;
     /* padding: 0 0 10px 0; */
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 /* Styling for form fields */

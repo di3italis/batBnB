@@ -9,7 +9,7 @@ export default function HomeSpots() {
     const spots = useSelector((state) => state.spots);
     // const [loaded, setLoaded] = useState(false);
    
-   console.log("spots:", spots);
+   // console.log("spots:", spots);
 
     useEffect(() => {
         dispatch(getSpotsThunk())
@@ -19,7 +19,7 @@ export default function HomeSpots() {
     // console.log("spot 1:", spots[1]);
 
     if (!spots) {
-        console.log("spots is null");
+        // console.log("spots is null");
         return <div>Spots Not Found!</div>;
     }
 
