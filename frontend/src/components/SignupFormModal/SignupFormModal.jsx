@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import * as sessionActions from "../../store/session";
-// import './SignupFormModal.css'
-import "../../context/Modal.css";
+import styles from './SignupFormModal.css'
 
 function SignupFormModal() {
     const dispatch = useDispatch();
@@ -55,70 +54,59 @@ function SignupFormModal() {
             <form onSubmit={handleSubmit}>
                 <ul>
                     <li>
-                        <label>
-                            Username
                             <input
                                 type="text"
+                                placeholder={errors.username ? errors.username : "Username"}
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 required
                             />
-                            {errors.username && <p>{errors.username}</p>}
-                        </label>
+                            {errors.username && <e className={styles.e}>{errors.username}</e>}
                     </li>
                     <li>
-                        <label>
-                            First Name
                             <input
                                 type="text"
+                                placeholder="First Name"
                                 value={firstName}
                                 onChange={(e) => setFirstName(e.target.value)}
                                 required
                             />
-                            {errors.firstName && <p>{errors.firstName}</p>}
-                        </label>
+                            {errors.firstName && <e>{errors.firstName}</e>}
                     </li>
                     <li>
-                        <label>
-                            Last Name
                             <input
                                 type="text"
+                                placeholder="Last Name"
                                 value={lastName}
                                 onChange={(e) => setLastName(e.target.value)}
                                 required
                             />
-                            {errors.lastName && <p>{errors.lastName}</p>}
-                        </label>
+                            {errors.lastName && <e>{errors.lastName}</e>}
                     </li>
                     <li>
-                        <label>
-                            Email
                             <input
                                 type="text"
+                                placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
-                            {errors.email && <p>{errors.email}</p>}
-                        </label>
+                            {errors.email && <e>{errors.email}</e>}
                     </li>
                     <li>
-                        <label>
-                            Password
                             <input
                                 type="text"
+                                placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
-                            {errors.password && <p>{errors.password}</p>}
-                        </label>
+                            {errors.password && <e>{errors.password}</e>}
                     </li>
                     <li>
-                        <label>
-                            Confirm Password
                             <input
                                 type="password"
+                                placeholder="Confirm Password"
                                 value={confirmPassword}
                                 onChange={(e) =>
                                     setConfirmPassword(e.target.value)
@@ -126,9 +114,8 @@ function SignupFormModal() {
                                 required
                             />
                             {errors.confirmPassword && (
-                                <p>{errors.confirmPassword}</p>
+                                <e>{errors.confirmPassword}</e>
                             )}
-                        </label>
                     </li>
                     <button type="submit">Sign Up</button>
                 </ul>
