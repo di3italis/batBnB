@@ -11,6 +11,8 @@ npm run sequelize --prefix backend db:migrate:undo:all &&
 npm run sequelize --prefix backend db:migrate && 
 npm run sequelize --prefix backend db:seed:all
 
+start command: npm start
+
 ## Ongoing Maintenance
 The main limitation of the free Render Postgres database instance is that it will be deleted after 90 days. In order to keep your application up and running, you MUST create a new database instance before the 90 day period ends.
 

@@ -16,8 +16,7 @@ export default function CreateSpot() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState();
-    const [preview, setPreview] = useState(false);
-    const [img1, setImg1] = useState("");
+    const [previewImg, setPreviewImg] = useState("");
     const [img2, setImg2] = useState("");
     const [img3, setImg3] = useState("");
     const [img4, setImg4] = useState("");
@@ -67,7 +66,7 @@ export default function CreateSpot() {
             return regex.test(url);
         };
 
-        const urls = [img1, img2, img3, img4, img5];
+        const urls = [previewImg, img2, img3, img4, img5];
 
         urls.forEach((url, index) => {
             if (!urlValidator && url.length) {
@@ -95,10 +94,27 @@ export default function CreateSpot() {
 
             const newSpotId = newSpot?.id;
 
+            const imagePayload = {
+                if (urls.length) {
+                    urls.forEach((url, index) => {
+                        if (url.length) {
+                            dispatch(
+                                spotActions.postImage({
+                                    imageableType: "Spot",
+                                    imageableId: newSpotId,
+                                    url,
+                                    preview: index === 0 ? true : false,
+                                })
+                            );
+                        }
+                    });
+                }
+            };
+
             // check this
             if (!newSpot?.message) {
                 navigate(`/spots/${newSpot.id}`); 
-            }
+            } else console.log(newSpot.message);
         }
     }; //handleSubmit
 } // default 
