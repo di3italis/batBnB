@@ -1,7 +1,10 @@
-BatBnB is a simplified AirBnB clone project for educational purposes.
+# Welcome to BatBnB
+## BatBnB is a simplified AirBnB clone project for educational purposes.
 
 ![Link Text](https://batbnb.s3.us-west-1.amazonaws.com/destroyedPallace/dpScreenshot.png)
+<sub>*Spot Detail page for Whispering Ruins a spot in the BatBnB universe*</sub>
 
+<hr/>
   It is a fun spin on the original website, imagining a world where bats are the primary inhabitants of the homes. As such, the architecture is creatively imagined as other-worldy and dreamy place that would be cozy for a family of bats. All imagery was created with that in mind, using Midjourney.
 
 This project is divided into 3 parts:
