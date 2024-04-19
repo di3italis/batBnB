@@ -41,10 +41,11 @@ export const postSpot = (payload) => {
 
 // -------------------POST IMG ACTION-------------------
 // -------------------POST IMG ACTION-------------------
-export const postImage = (payload) => {
+export const postImage = (payload, spotId) => {
     return {
         type: POST_IMAGE,
         payload,
+        spotId,
     }
 };
 
@@ -120,20 +121,19 @@ export const postSpotThunk = (spot) => async (dispatch) => {
 }
 
 // -------------------POST IMG THUNK-------------------
-// -------------------POSzaT IMG THUNK-------------------
-export const postImageThunk = ({image}) => async (dispatch) => {
+// -------------------POST IMG THUNK-------------------
+export const postImageThunk = (payload) => async (dispatch) => {
     try {
-        const res = await csrfFetch('/api/spots/`${image.imageableId}', {
+        const imageData = { url: payload.url, preview: payload.preview}
+        const res = await csrfFetch('/api/spots/`${payload.spotId}`/images', {
             method: 'POST',
-            body: JSON.stringify(image),
+            body: JSON.stringify(imageData),
             headers: {
                 'Content-Type': 'application/json',
             }
         });
-        if (res.ok) {
-            const data = await res.json();
-            dispatch(postImage(data));
-        }
+        const imgRes = await res.json();
+        dispatch(postImage(imgRes, payload.spotId));
     }
     catch (error) {
         console.log("ERROR IN POSTING IMAGE", error);
@@ -171,11 +171,19 @@ const spotsReducer = (state = initialState, action) => {
       return { ...state, [action.payload.id]: action.payload};
     }
 // -------------------POST IMG-------------------
-    case POST_IMAGE: {
-        return {
-            ...state, 
-            };
-    }
+    case POST_IMAGE: { // res => {id, url, preview}
+        const newState = { ...state };
+        const spotId = action.spotId;
+        const image = action.payload;
+        const spot = newState[spotId];
+
+            if (spot && spot.SpotImages) {
+                spot.SpotImages.push(image);
+            } else {
+                spot.SpotImages = [image];
+            }
+        return newState;
+        }
 // -------------------ERROR-------------------
     case ERROR: {
       return { ...state, error: action.error};
