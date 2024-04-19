@@ -1,6 +1,8 @@
-[Link Text](https://batbnb.s3.us-west-1.amazonaws.com/destroyedPallace/dpScreenshot.png)
+BatBnB is a simplified AirBnB clone project for educational purposes.
 
-BatBnB is an AirBnB clone project for educational purposes. The goal is to create a simple copy of the AirBnB website. It is a fun spin on the original website, imagining a world where bats are the primary inhabitants of the homes. As such, the architecture is creatively imagined as other-worldy and dreamy place that would be cozy for a family of bats. All imagery was created with that in mind, using Midjourney.
+![Link Text](https://batbnb.s3.us-west-1.amazonaws.com/destroyedPallace/dpScreenshot.png)
+
+  It is a fun spin on the original website, imagining a world where bats are the primary inhabitants of the homes. As such, the architecture is creatively imagined as other-worldy and dreamy place that would be cozy for a family of bats. All imagery was created with that in mind, using Midjourney.
 
 This project is divided into 3 parts:
 
