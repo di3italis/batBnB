@@ -4,6 +4,7 @@ import { csrfFetch } from './csrf';
 const GET_SPOTS = 'spots/GET_SPOTS';
 const GET_SPOT_DETAILS = 'spots/GET_SPOT_DETAILS';
 const POST_SPOT = 'spots/POST_SPOT';
+const POST_IMAGE = 'spots/POST_IMAGE';
 const ERROR = 'spots/ERROR';
 
 
@@ -11,7 +12,8 @@ const ERROR = 'spots/ERROR';
 // -------------------ACTIONS-------------------
 // -------------------ACTIONS-------------------
 
-// -------------------GET-------------------
+// -------------------GET ACTION-------------------
+// -------------------GET ACTION-------------------
 export const getSpots = (payload) => {
   return {
     type: GET_SPOTS,
@@ -19,7 +21,8 @@ export const getSpots = (payload) => {
   }
 };
 
-// -------------------GET DEEETS-------------------
+// -------------------DEEETS ACTION-------------------
+// -------------------DEEETS ACTION-------------------
 export const getSpotDetails = (payload) => {
   return {
     type: GET_SPOT_DETAILS,
@@ -27,7 +30,8 @@ export const getSpotDetails = (payload) => {
   }
 };
 
-// -------------------POST-------------------
+// -------------------POST ACTION-------------------
+// -------------------POST ACTION-------------------
 export const postSpot = (payload) => {
   return {
     type: POST_SPOT,
@@ -35,7 +39,17 @@ export const postSpot = (payload) => {
   }
 };
 
-// -------------------ERROR-------------------
+// -------------------POST IMG ACTION-------------------
+// -------------------POST IMG ACTION-------------------
+export const postImage = (payload) => {
+    return {
+        type: POST_IMAGE,
+        payload,
+    }
+};
+
+// -------------------ERROR ACTION-------------------
+// -------------------ERROR ACTION-------------------
 // need separate error actions for each fetch?
 export const handleError = (error) => {
   return {
@@ -49,8 +63,8 @@ export const handleError = (error) => {
 // -------------------THUNKS-------------------
 
 
-// -------------------GET-------------------
-// -------------------GET-------------------
+// -------------------GET THUNK-------------------
+// -------------------GET THUNK-------------------
 export const getSpotsThunk = () => async (dispatch) => {
   try {
     const res = await csrfFetch('/api/spots');
@@ -67,8 +81,8 @@ export const getSpotsThunk = () => async (dispatch) => {
 };
 
 
-// -------------------DEEEETS-------------------
-// -------------------DEEEETS-------------------
+// -------------------DEEEETS THUNK-------------------
+// -------------------DEEEETS THUNK-------------------
 export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
   try {
     const res = await csrfFetch(`/api/spots/${spotId}`);
@@ -83,8 +97,8 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
   }
 }
 
-// -------------------POST-------------------
-// -------------------POST-------------------
+// -------------------POST SPOT THUNK-------------------
+// -------------------POST SPOT THUNK-------------------
 export const postSpotThunk = (spot) => async (dispatch) => {
   try {
     const res = await csrfFetch('/api/spots', {
@@ -103,6 +117,28 @@ export const postSpotThunk = (spot) => async (dispatch) => {
     console.log("ERROR IN POSTING SPOT", error);
     dispatch(handleError(error));
   }
+}
+
+// -------------------POST IMG THUNK-------------------
+// -------------------POSzaT IMG THUNK-------------------
+export const postImageThunk = ({image}) => async (dispatch) => {
+    try {
+        const res = await csrfFetch('/api/spots/`${image.imageableId}', {
+            method: 'POST',
+            body: JSON.stringify(image),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        if (res.ok) {
+            const data = await res.json();
+            dispatch(postImage(data));
+        }
+    }
+    catch (error) {
+        console.log("ERROR IN POSTING IMAGE", error);
+        dispatch(handleError(error));
+    }
 }
 
 // -------------------REDUCER-------------------
@@ -133,6 +169,12 @@ const spotsReducer = (state = initialState, action) => {
 // -------------------POST SPOT-------------------
     case POST_SPOT: {
       return { ...state, [action.payload.id]: action.payload};
+    }
+// -------------------POST IMG-------------------
+    case POST_IMAGE: {
+        return {
+            ...state, 
+            };
     }
 // -------------------ERROR-------------------
     case ERROR: {
