@@ -14,7 +14,7 @@ export default function SpotDetail() {
     // const state = useSelector((state) => state);
     const spot = useSelector((state) => state.spots[mySpotId]);
     const currentUser = useSelector((state) => state.session.user);
-    const spotReviews = useSelector((state) => state.reviews[mySpotId]);
+    // const spotReviews = useSelector((state) => state.reviews[mySpotId]);
     const spotReviewsArray = useSelector((state) => Object.values(state.reviews[mySpotId] || {}));
 
     // console.log("spotId:", spotId);
