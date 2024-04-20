@@ -12,7 +12,7 @@ export default function SpotReviews() {
 
     useEffect(() => {
         dispatch(reviewActions.getReviewsThunk(mySpotId));
-    }, [dispatch, spotId]);
+    }, [dispatch, mySpotId]);
 
     if (!reviews) {
         return <div>Reviews not found</div>;

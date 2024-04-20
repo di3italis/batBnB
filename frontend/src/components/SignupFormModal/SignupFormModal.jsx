@@ -2,49 +2,57 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import * as sessionActions from "../../store/session";
-import styles from './SignupFormModal.css'
+import styles from '../../context/Modal.module.css'
+// import styles from './SignupFormModal.css'
 
 function SignupFormModal() {
     const dispatch = useDispatch();
-    const [username, setUsername] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    // const [username, setUsername] = useState("");
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+    // const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({});
     const { closeModal } = useModal();
+     const [inputs, setInputs] = useState({
+        username: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setInputs(prev => ({ ...prev, [name]: value }));
+        //if errors exist, remove them when user starts typing
+        if (errors.name) setErrors(prevErrors => ({ ...prevErrors, [name]: "" }));
+    };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        //start
-        if (password !== confirmPassword) {
-            setErrors({
-                ...errors,
+        if (inputs.password !== inputs.confirmPassword) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
                 confirmPassword:
                     "Confirm Password field must be the same as the Password field",
-            });
-            //end
-        } else {
-            //new 240410
-            setErrors({});
-            return dispatch(
-                sessionActions.signup({
-                    username,
-                    firstName,
-                    lastName,
-                    email,
-                    password,
-                })
-            )
-                .then(closeModal)
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data?.errors) setErrors(data.errors);
-                });
-        }
-        return setErrors;
+            }));
+        } 
+            try {
+                await dispatch(sessionActions.signup(inputs));
+                closeModal();
+            } catch (res) {
+                const data = await res.json();
+                if (data?.errors) {
+                    setErrors(data.errors)
+                    // clear inputs if there are errors
+                    Object.keys(data.errors).forEach((key) => {
+                        setInputs(prev => ({...prev, [key]: "" }));
+                    });
+                }
+            }
     };
 
     // Form JSX
@@ -53,70 +61,21 @@ function SignupFormModal() {
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
                 <ul>
-                    <li>
-                            <input
-                                type="text"
-                                placeholder={errors.username ? errors.username : "Username"}
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                required
-                            />
-                            {errors.username && <e className={styles.e}>{errors.username}</e>}
-                    </li>
-                    <li>
-                            <input
-                                type="text"
-                                placeholder="First Name"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
-                                required
-                            />
-                            {errors.firstName && <e>{errors.firstName}</e>}
-                    </li>
-                    <li>
-                            <input
-                                type="text"
-                                placeholder="Last Name"
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
-                                required
-                            />
-                            {errors.lastName && <e>{errors.lastName}</e>}
-                    </li>
-                    <li>
-                            <input
-                                type="text"
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                            {errors.email && <e>{errors.email}</e>}
-                    </li>
-                    <li>
-                            <input
-                                type="text"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            {errors.password && <e>{errors.password}</e>}
-                    </li>
-                    <li>
-                            <input
-                                type="password"
-                                placeholder="Confirm Password"
-                                value={confirmPassword}
-                                onChange={(e) =>
-                                    setConfirmPassword(e.target.value)
-                                }
-                                required
-                            />
-                            {errors.confirmPassword && (
-                                <e>{errors.confirmPassword}</e>
-                            )}
-                    </li>
+                    {Object.entries(inputs).map(([key, value]) => (
+                        <li key={key}>
+                            <label>
+                                <input 
+                                    className={errors[key] ? styles.inputError : {} }
+                                    type={key === "password" || key === "confirmPassword" ? "password" : "text"}
+                                    name={key}
+                                    placeholder={errors[key]? errors[key] : key[0].toUpperCase() + key.slice(1)}
+                                    value={value}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                            </label>
+                        </li>
+                    ))}
                     <button type="submit">Sign Up</button>
                 </ul>
             </form>

@@ -1,0 +1,184 @@
+.createSpotPage {
+    display: grid;
+  background: #181A1B;
+  padding: 32px;
+  border-radius: 4px;
+  max-width: 2000px; /* Adjust based on your layout */
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  margin: 0 auto;
+}
+
+.createSpotForm {
+  display: grid;
+  background: inherit;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(24, auto);
+    grid-auto-flow: row;
+    justify-self: center;
+  width: 75%;
+  grid-gap: 16px;
+  box-shadow: 0 0 30px 6px rgba(0, 0, 0, 0.5 );
+}
+
+.inputs {
+    background: inherit;
+    display: grid;
+    grid-column: 1 / 3;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12, auto);
+  grid-gap: 16px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.singleInput {
+    display: grid;
+    grid-column: 1 / 3;
+}
+
+#title {
+    display: grid;
+    width: 100%;
+    justify-content: start;
+}
+
+h2 {
+    font-weight: lighter;
+    grid-column: 1 / 3;
+    text-align: left;
+    margin: 0;
+}
+
+h3 {
+    font-weight: lighter;
+    grid-column: 1 / 3;
+    text-align: left;
+    margin: 0;
+}
+
+p {
+    font-weight: lighter;
+    grid-column: 1 / 3;
+    text-align: left;
+    margin: 0;
+}
+
+.subtitle {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+label {
+    font-size: 14px;
+    font-weight: regular;
+    color: white;
+    margin: 0 0 4px 0;
+}
+
+.country {
+    grid-row: 3 / 4;
+}
+
+.address {
+    grid-row: 4 / 5;
+}
+
+.city {
+    grid-row: 5 / 6;
+}
+
+.state {
+    color: red;
+    background: red;
+    grid-row: 6 / 7;
+}
+
+.descriptionSection {
+  display: grid;
+  grid-gap: 16px;
+  grid-row: 10 / 12;
+  height: 100px;
+}
+
+.singleInput label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+
+.input::placeholder {
+  /* border: 1px solid #ccc; */
+    color: red;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+textarea {
+  font-size: 18px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  resize: none;
+  height: 100px;
+}
+
+.lat {
+  grid-column: 1 / 2;
+  justify-self: start;
+  justify-content: start;
+  width: 50%;
+}
+
+.lng {
+  grid-column: 2 / 3;
+  justify-self: end;
+  justify-content: end;
+  width: 50%;
+}
+
+.e {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.button {
+  background-color: #000; /* Use the color from your brand */
+  color: #fff;
+  grid-row: 22 / 23;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block; /* Center the button */
+  margin: 0 auto;
+}
+
+/* Style for error messages */
+.e {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .createSpotPage {
+    padding: 16px;
+  }
+
+  .createSpotForm {
+    max-width: 100%;
+  }
+
+  /* Adjustments for smaller screen sizes */
+}
+
