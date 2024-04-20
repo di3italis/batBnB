@@ -89,8 +89,9 @@ export default function CreateSpot() {
                 payload[key] = value;
             }
         });
+                console.log("payload:", payload);
         // Moved this line inside the if condition to ensure it's executed only when there are no errors
-        const newSpot = await dispatch(spotActions.postSpot(payload)); // lets go bake this cake
+        const newSpot = await dispatch(spotActions.postSpotThunk(payload)); // lets go bake this cake
 
         const newSpotId = newSpot?.id;
 
@@ -99,23 +100,21 @@ export default function CreateSpot() {
             if (url) {
                 imagePayload.push({
                     url, preview: index === 0 ? true : false,
-                    spotId: newSpotId,
                 });
             }
         });
 
         imagePayload.forEach(payload => {
-            dispatch(spotActions.postImage(payload));
+            dispatch(spotActions.postImage(newSpotId, payload));
         });
 
         // check this
         // if (!newSpot?.message) {
-            navigate(`/spots/${newSpot.id}`);
+            navigate(`/spots/${newSpotId}`);
         // } else console.log(newSpot.message);
     }
 
     setErrors(fieldCheck);
-    return setErrors;
 };
 
 

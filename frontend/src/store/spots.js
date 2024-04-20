@@ -102,6 +102,7 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
 // -------------------POST SPOT THUNK-------------------
 export const postSpotThunk = (spot) => async (dispatch) => {
   try {
+        console.log("postspotThunk:", spot);
     const res = await csrfFetch('/api/spots', {
       method: 'POST',
       body: JSON.stringify(spot),
@@ -122,10 +123,10 @@ export const postSpotThunk = (spot) => async (dispatch) => {
 
 // -------------------POST IMG THUNK-------------------
 // -------------------POST IMG THUNK-------------------
-export const postImageThunk = (payload) => async (dispatch) => {
+export const postImageThunk = (newSpotId, payload) => async (dispatch) => {
     try {
         const imageData = { url: payload.url, preview: payload.preview}
-        const res = await csrfFetch('/api/spots/`${payload.spotId}`/images', {
+        const res = await csrfFetch('/api/spots/`${newSpotId}`/images', {
             method: 'POST',
             body: JSON.stringify(imageData),
             headers: {
@@ -133,7 +134,7 @@ export const postImageThunk = (payload) => async (dispatch) => {
             }
         });
         const imgRes = await res.json();
-        dispatch(postImage(imgRes, payload.spotId));
+        dispatch(postImage(imgRes, payload.imageableId));
     }
     catch (error) {
         console.log("ERROR IN POSTING IMAGE", error);
@@ -177,13 +178,17 @@ const spotsReducer = (state = initialState, action) => {
         const image = action.payload;
         const spot = newState[spotId];
 
-            if (spot && spot.SpotImages) {
-                spot.SpotImages.push(image);
-            } else {
-                spot.SpotImages = [image];
-            }
-        return newState;
+        if (spot) {
+        // Check if SpotImages exists, if not, initialize it as an empty array
+        if (!spot["SpotImages"]) {
+            spot["SpotImages"] = [];
         }
+
+        spot["SpotImages"].push(image);
+    }
+
+    return newState;
+}
 // -------------------ERROR-------------------
     case ERROR: {
       return { ...state, error: action.error};

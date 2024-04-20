@@ -1,6 +1,6 @@
 // console.log('************', process.env.DB_FILE);
 module.exports = {
-    environment: process.env.NODE_ENV || "development",
+    environment: process.env.NODE_ENV || "production",
     port: process.env.PORT || 8000,
     dbFile: process.env.DB_FILE || "db/dev.db",
     jwtConfig: {
