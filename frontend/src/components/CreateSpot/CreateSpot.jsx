@@ -160,7 +160,7 @@ export default function CreateSpot() {
                 <div className={styles.titleSection}>
                     <h3>Create a title for your spot</h3>
                     <p id="title">
-                       Catch guests' attention with a spot title that highlights what makes your place special. 
+                       Catch guests`@apos` attention with a spot title that highlights what makes your place special. 
                     </p>
                 </div>
                 <section className={styles.priceSection}>
@@ -180,4 +180,4 @@ export default function CreateSpot() {
             </form>
         </div>
     )
-}; // default
+} // default
