@@ -87,8 +87,8 @@ const SpotDetail = () => {
                             ${spot?.price} per night
                         </div>
                         <TbBat />
-                        {spot && spot?.avgRating && (
-                            <> {spot?.avgRating.toFixed(1)}</>
+                        {spot && typeof spot.avgRating === "number" && (
+                            <> {spot.avgRating.toFixed(1)}</>
                         )}
                         {spot?.numReviews ? (
                             <> · {spot?.numReviews}</>
@@ -107,8 +107,8 @@ const SpotDetail = () => {
                     <div className={styles.reviewContainer}>
                         <div className={styles.reviewHeader}>
                             <TbBat />
-                            {spot && spot?.avgRating && (
-                                <> {spot?.avgRating.toFixed(1)}</>
+                            {spot && typeof spot.avgRating === "number" && (
+                                <> {spot.avgRating.toFixed(1)}</>
                             )}
                             {spot?.numReviews ? (
                                 <> · {spot?.numReviews}</>
