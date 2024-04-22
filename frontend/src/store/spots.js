@@ -113,6 +113,7 @@ export const postSpotThunk = (spot) => async (dispatch) => {
     if (res.ok) {
       const data = await res.json();
       dispatch(postSpot(data));
+        return data;
     }
   }
   catch (error) {
@@ -146,7 +147,7 @@ export const postImageThunk = (newSpotId, payload) => async (dispatch) => {
 // -------------------REDUCER-------------------
 // -------------------REDUCER-------------------
 
-const initialState = {};
+const initialState = { };
 
 const spotsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -162,7 +163,12 @@ const spotsReducer = (state = initialState, action) => {
       return newState;
     }
 // -------------------DETAILS-------------------
-    case GET_SPOT_DETAILS: {
+    // case GET_SPOT_DETAILS: {
+    //      console.log("GET_SPOT_DETAILS action.payload:", action.payload);
+    //     const newSpotDetails = { ...state.spotDetails, [action.payload.id]: action.payload};
+    //   return { ...state, spotDetails: newSpotDetails};
+    // }
+        case GET_SPOT_DETAILS: {
          console.log("GET_SPOT_DETAILS action.payload:", action.payload);
       const id = action.payload.id;
       return { ...state, [id]: action.payload};

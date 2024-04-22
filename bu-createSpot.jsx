@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as spotActions from "./store/spots";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateSpot() {
+export default function MySpotPage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const ownerId = useSelector((state) => state.session.user.id);

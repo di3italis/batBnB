@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useDispatch /* useSelector */ } from "react-redux";
 import * as spotActions from "../../store/spots";
 import { useNavigate } from "react-router-dom";
-import styles from "./CreateSpot.module.css";
+// import styles from "./CreateSpot.module.css";
+import styles from "./MySpotPage.module.css";
 
 export default function CreateSpot() {
     const dispatch = useDispatch();

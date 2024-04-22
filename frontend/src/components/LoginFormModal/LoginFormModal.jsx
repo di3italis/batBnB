@@ -24,11 +24,23 @@ function LoginFormModal() {
             .then(closeModal)
             .catch(async (res) => {
                 const data = await res.json();
-                console.log("DATA!!!:", data);
+                // console.log("DATA!!!:", data);
                 if (data?.message) setErrors({ message: data.message });
             });
         // return setErrors;
     };
+
+      const handleDemoUserOnClick = () => {
+    return dispatch(
+      sessionActions.login({
+        credential: "Demo-lition",
+        password: "password",
+      })
+    ).then(() => {
+      closeModal();
+    });
+  };
+
 
     return (
         <>
@@ -54,6 +66,7 @@ function LoginFormModal() {
                     )}
                 </div>
                 <button type="submit">Log In</button>
+                <button type="submit" onClick={handleDemoUserOnClick}>Demo User</button>
             </form>
         </>
     );
