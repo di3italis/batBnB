@@ -51,7 +51,8 @@ export const postReviewThunk = (spotId, payload) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json();
         console.log("NEWREVIEWRESDATA", data);
-        dispatch(postReview(data));
+        dispatch(postReview(spotId, data));
+        return data;
     }
     if (!res.ok) {
         console.log("ERROR", res.message);
@@ -85,12 +86,35 @@ export default function reviewsReducer(state = initialState, action) {
             };
         }
         case POST_REVIEW:
-            return {
-                ...state,
-                [action.spotId]: 
-                    // ...(state[action.spotId] || []),
-                    action.payload,
-            };
+            case POST_REVIEW:
+    const { spotId, payload } = action;
+    const existingReviews = state[spotId] || [];
+    const updatedReviews = [...existingReviews, payload]; // Append the new review to the existing array
+    return {
+        ...state,
+        [spotId]: updatedReviews,
+    };
+
+            // return {
+            //     ...state,
+            //     [action.spotId]:[state, [action.data] = action.data],
+            //
+            // };
+            //
+        //
+    // const newState = {
+    //   ...state,
+    //   [action.spotId]: {
+    //     ...(state[action.spotId] || {}),
+    //     [action.payload.id]: action.payload 
+    //   }
+    // };
+    // return newState;
+            // return {
+            //     ...state,
+            //     [action.spotId]:
+            //     {...(state[action.spotId], action.data[id] = action.payload)},
+            // };
     case DELETE_REVIEW:
       delete [action.payload.id]
       return {...state}

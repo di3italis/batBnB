@@ -19,9 +19,8 @@ const SpotDetail = () => {
     const currentSpotId = Number(spotId);
     const spot = useSelector((state) => getSpot(state, currentSpotId));
     const currentUser = useSelector(getCurrentUser);
-    const spotReviewsArray = useSelector((state) =>
-        getSpotReviewsArray(state, currentSpotId)
-    );
+    // const spotReviewsArray = useSelector((state) => getSpotReviewsArray(state, currentSpotId));
+    const spotReviewsArray = useSelector((state) => state.reviews[currentSpotId]);
     const previewImage = useSelector((state) =>
         getPreviewImage(state, currentSpotId)
     );
@@ -154,6 +153,5 @@ const SpotDetail = () => {
     );
 };
 
-SpotDetail.whyDidYouRender = true;
 
 export default SpotDetail;

@@ -9,18 +9,22 @@ import styles from "./SpotReviews.module.css";
 export default function SpotReviews() {
     const { spotId } = useParams();
     const mySpotId = Number(spotId);
-    const reviews = useSelector((state) => state.reviews[mySpotId]);
+    const reviews = useSelector((state) => state.reviews[mySpotId] || []);
+    // const reviews = useSelector((state) => state.reviews || []);
     const currentUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
 
     console.log("reviews", reviews);
     useEffect(() => {
-        dispatch(reviewActions.getReviewsThunk(mySpotId));
+        dispatch(reviewActions.getReviewsThunk(mySpotId)); // num or string?
     }, [dispatch, mySpotId]);
 
-    if (!reviews) {
+    if (!Array.isArray(reviews) || reviews.length === 0) {
         return <div>Reviews not found</div>;
     }
+    // if (!reviews) {
+    //     return <div>Reviews not found</div>;
+    // }
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
