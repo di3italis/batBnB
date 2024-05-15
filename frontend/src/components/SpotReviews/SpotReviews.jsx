@@ -9,19 +9,22 @@ import styles from "./SpotReviews.module.css";
 export default function SpotReviews() {
     const { spotId } = useParams();
     const mySpotId = Number(spotId);
-    const reviews = useSelector((state) => state.reviews[mySpotId] || []);
-    // const reviews = useSelector((state) => state.reviews || []);
+    const spotReviews = useSelector((state) => state.reviews);
     const currentUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
 
-    console.log("reviews", reviews);
+    const spotReviewsArray = spotReviews ? Object.values(spotReviews) : [];
+    // console.log("spotReviewsArray in SpotReviews", spotReviewsArray);
+
+
+    // console.log("spotReviews", spotReviews);
     useEffect(() => {
         dispatch(reviewActions.getReviewsThunk(mySpotId)); // num or string?
     }, [dispatch, mySpotId]);
 
-    if (!Array.isArray(reviews) || reviews.length === 0) {
-        return <div>Reviews not found</div>;
-    }
+    // if (!Array.isArray(reviews) || reviews.length === 0) { //review now an object!!!
+    //     return <div>Reviews not found</div>;
+    // }
     // if (!reviews) {
     //     return <div>Reviews not found</div>;
     // }
@@ -35,11 +38,11 @@ export default function SpotReviews() {
 
     return (
         <div>
-            {reviews.map((review) => (
+            {spotReviewsArray.map((review) => (
                 <div className={styles.review} key={review.id}>
                     <div className={styles.reviewInfo}>
                         <div className={styles.reviewFirstName}>
-                            {review.User.firstName}
+                            {review.User?.firstName}
                         </div>
                         <div className={styles.reviewDate}>
                             {formatDate(review.createdAt)}

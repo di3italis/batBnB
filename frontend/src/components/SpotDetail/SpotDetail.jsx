@@ -2,12 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as spotActions from "../../store/spots";
-import {
-    getSpot,
-    getCurrentUser,
-    getSpotReviewsArray,
-    getPreviewImage,
-} from "../Selectors/Selectors.jsx"; // Import selectors
 import OpenModalButton from "../OpenModalButton";
 import NewReviewModal from "../NewReviewModal";
 import SpotReviews from "../SpotReviews";
@@ -17,17 +11,18 @@ import styles from "./SpotDetail.module.css";
 const SpotDetail = () => {
     const { spotId } = useParams();
     const currentSpotId = Number(spotId);
-    const spot = useSelector((state) => getSpot(state, currentSpotId));
-    const currentUser = useSelector(getCurrentUser);
-    // const spotReviewsArray = useSelector((state) => getSpotReviewsArray(state, currentSpotId));
-    const spotReviewsArray = useSelector((state) => state.reviews[currentSpotId]);
-    const previewImage = useSelector((state) =>
-        getPreviewImage(state, currentSpotId)
-    );
+    const spot = useSelector((state) => state.spots[currentSpotId]);
+    const currentUser = useSelector(state => state.session.user);
+    const spotReviews = useSelector((state) => state.reviews); // changed from currentSpotId to spotId
+    const previewImage = useSelector((state) => state.spots[currentSpotId]?.SpotImages?.find((image) => image.preview));
+    // const previewImage = useSelector((state) => getPreviewImage(state, currentSpotId));
 
     // console.log("spot", spot);
 
     const dispatch = useDispatch();
+
+    const spotReviewsArray = spotReviews ? Object.values(spotReviews) : [];
+    // console.log("SpotDetail.spotReviewsArray", spotReviewsArray);
 
     useEffect(() => {
         // console.log("DISPATCHING");
@@ -35,13 +30,16 @@ const SpotDetail = () => {
         return () => {
             // console.log("CLEANING UP");
         };
-    }, [dispatch, spotId]);
+    }, [dispatch, spotId, spotReviews]);
 
     const handleClickReserve = () => {
         return window.alert("Feature coming soon");
     };
 
     // console.log("RENDERING");
+
+    const canPostReview = currentUser && currentUser.id !== spot?.ownerId && !spotReviewsArray?.some((review) => review.userId === currentUser.id);
+
     return (
         <div className={styles.spotDetailPage}>
             <div className={styles.spotDetailContainer}>
@@ -117,11 +115,7 @@ const SpotDetail = () => {
                             {spot?.numReviews === 1 && <> Review</>}
                             {spot?.numReviews > 1 && <> Reviews</>}
                         </div>
-                        {currentUser &&
-                            currentUser?.id !== spot?.ownerId &&
-                            !spotReviewsArray?.some(
-                                (review) => review.userId === currentUser.id
-                            ) && (
+                        {canPostReview && (
                                 <div className="review-modal">
                                     {spot && currentUser !== null && (
                                         <OpenModalButton
