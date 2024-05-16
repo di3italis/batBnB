@@ -16,7 +16,10 @@ const SpotCard = ({ spot }) => {
                   <span className={styles.star}>
                       {spot?.avgRating ? (
                         <>
-                          <TbBat /> {spot?.avgRating.toFixed(1)}
+                          <TbBat /> 
+                        {spot && spot.avgRating != null && (
+                            <> {typeof spot.avgRating === "number" ? spot.avgRating.toFixed(1) : parseFloat(spot.avgRating).toFixed(1)}</>
+                        )}
                         </>
                       ) : (
                         <>
