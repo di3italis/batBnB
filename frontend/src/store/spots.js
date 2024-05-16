@@ -10,12 +10,9 @@ const DELETE_SPOT = "spots/DELETE_SPOT";
 const UPDATE_SPOT = "spots/UPDATE_SPOT";
 const ERROR = "spots/ERROR";
 
-
-// -------------------ACTIONS-------------------
 // -------------------ACTIONS-------------------
 // -------------------ACTIONS-------------------
 
-// -------------------GET ACTION-------------------
 // -------------------GET ACTION-------------------
 export const getSpots = (payload) => {
     return {
@@ -23,8 +20,6 @@ export const getSpots = (payload) => {
         payload,
     };
 };
-
-// -------------------DEEETS ACTION-------------------
 // -------------------DEEETS ACTION-------------------
 export const getSpotDetails = (payload) => {
     return {
@@ -32,9 +27,6 @@ export const getSpotDetails = (payload) => {
         payload,
     };
 };
-
-
-// -------------------GET CURRENT USER SPOTS ACTION-------------------
 // -------------------GET CURRENT USER SPOTS ACTION-------------------
 export const getCurrentUserSpots = (payload) => {
       return { 
@@ -42,8 +34,6 @@ export const getCurrentUserSpots = (payload) => {
         payload 
     };
 };
-
-// -------------------POST ACTION-------------------
 // -------------------POST ACTION-------------------
 export const postSpot = (payload) => {
     return {
@@ -53,7 +43,6 @@ export const postSpot = (payload) => {
 };
 
 // -------------------POST IMG ACTION-------------------
-// -------------------POST IMG ACTION-------------------
 export const postImage = (payload, spotId) => {
     return {
         type: POST_IMAGE,
@@ -62,7 +51,6 @@ export const postImage = (payload, spotId) => {
     };
 };
 
-// -------------------DELETE ACTION-------------------
 // -------------------DELETE ACTION-------------------
 export const deleteSpot = (spotId) => {
     return {
@@ -80,7 +68,6 @@ const updateSpot = (spot) => {
 }
 
 // -------------------ERROR ACTION-------------------
-// -------------------ERROR ACTION-------------------
 // need separate error actions for each fetch?
 export const handleError = (error) => {
     return {
@@ -89,11 +76,10 @@ export const handleError = (error) => {
     };
 };
 
-// -------------------THUNKS-------------------
+
 // -------------------THUNKS-------------------
 // -------------------THUNKS-------------------
 
-// -------------------GET THUNK-------------------
 // -------------------GET THUNK-------------------
 export const getSpotsThunk = () => async (dispatch) => {
     try {
@@ -110,7 +96,6 @@ export const getSpotsThunk = () => async (dispatch) => {
 };
 
 // -------------------DEEEETS THUNK-------------------
-// -------------------DEEEETS THUNK-------------------
 export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
     try {
         const res = await csrfFetch(`/api/spots/${spotId}`);
@@ -124,7 +109,6 @@ export const getSpotDetailsThunk = (spotId) => async (dispatch) => {
     }
 };
 
-// -------------------GET CURRENT USER SPOTS THUNK-------------------
 // -------------------GET CURRENT USER SPOTS THUNK-------------------
 export const getCurrentUserSpotsThunk = () => async (dispatch) => {
     try {
@@ -141,8 +125,6 @@ export const getCurrentUserSpotsThunk = () => async (dispatch) => {
     }
 };
 
-
-// -------------------POST SPOT THUNK-------------------
 // -------------------POST SPOT THUNK-------------------
 export const postSpotThunk = (spot) => async (dispatch) => {
     try {
@@ -166,7 +148,6 @@ export const postSpotThunk = (spot) => async (dispatch) => {
 };
 
 // -------------------POST IMG THUNK-------------------
-// -------------------POST IMG THUNK-------------------
 export const postImageThunk = (newSpotId, payload) => async (dispatch) => {
     try {
         const imageData = { url: payload.url, preview: payload.preview };
@@ -185,7 +166,7 @@ export const postImageThunk = (newSpotId, payload) => async (dispatch) => {
     }
 };
 
-// -------------------DELETE SPOT---------------
+// -------------------DELETE SPOT THUNK---------------
 export const deleteSpotThunk = (spotId) => async (dispatch) => {
     try{
         const res = await csrfFetch(`/api/spots/${spotId}`, {
@@ -202,11 +183,11 @@ export const deleteSpotThunk = (spotId) => async (dispatch) => {
 }
 
 // --------------UPDATE SPOT THUNK--------------
-const updateSpotThunk = (spot) => async (dispatch) => {
+export const updateSpotThunk = (payload, spotId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/spots/${spot.id}`, {
+        const res = await csrfFetch(`/api/spots/${spotId}`, {
             method: "PUT",
-            bod: JSON.stringify(spot),
+            body: JSON.stringify(payload),
             headers: {
                 "Content-Type": "application/json"
             },
@@ -214,6 +195,7 @@ const updateSpotThunk = (spot) => async (dispatch) => {
         if (res.ok) {
             const data = await res.json();
             dispatch(updateSpot(data));
+            return data;
         }
     } catch (error) {
         console.error("ERROR UPDATING SPOT", error)
@@ -221,7 +203,7 @@ const updateSpotThunk = (spot) => async (dispatch) => {
     }
 }
 
-// -------------------REDUCER-------------------
+
 // -------------------REDUCER-------------------
 // -------------------REDUCER-------------------
 
@@ -240,12 +222,6 @@ const spotsReducer = (state = initialState, action) => {
             return newState;
         }
         // -------------------DETAILS-------------------
-        // case GET_SPOT_DETAILS: {
-        //      console.log("GET_SPOT_DETAILS action.payload:", action.payload);
-        //     const newSpotDetails = { ...state.spotDetails, [action.payload.id]: action.payload};
-        //   return { ...state, spotDetails: newSpotDetails};
-        // }
-        // -------------------GET SPOT DEETS-------------------
         case GET_SPOT_DETAILS: {
             // console.log("GET_SPOT_DETAILS action.payload:", action.payload);
             const id = action.payload.id;

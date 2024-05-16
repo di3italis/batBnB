@@ -1,3 +1,4 @@
+// App.jsx
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -10,6 +11,7 @@ import HomeSpots from "./components/HomeSpots";
 import SpotDetail from "./components/SpotDetail";
 import ManageSpots from "./components/ManageSpots";
 import CreateSpot from "./components/CreateSpot";
+import UpdateSpot from "./components/UpdateSpot";
 import * as sessionActions from "./store/session";
 
 function Layout() {
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: "/create-spot",
                 element: <CreateSpot />,
+            },
+            {
+                path: "/update-spot/:spotId",
+                element: <UpdateSpot />,
             },
         ],
     },

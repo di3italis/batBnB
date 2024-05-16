@@ -31,7 +31,7 @@ export default function ManageSpots() {
         return <div>Loading...</div>;
     }
 
-       if (!userSpotsArray.length) {
+    if (!userSpotsArray.length) {
         return (
             <div className={styles.main}>
                 <div>Spots Not Found!</div>
@@ -42,26 +42,28 @@ export default function ManageSpots() {
 
     console.log("currUserSpots:", userSpotsArray);
 
-    const handleUpdate = async () => {
-        await dispatch(spotActions.updateSpotThunk(spotId))
-    }
-
     return (
         <div className={styles.main}>
             <div className={styles.title}>
                 <h1>Manage Your Spots</h1>
             </div>
             <div className={styles.cardsCont}>
-                    {Object.values(userSpotsArray).map((spot) => (
-                        <div key={spot.id} className={styles.card}>
-                            <SpotCard key={spot.id} spot={spot} />
-                            <button onClick={() => navigate(`/spots/${spotId}/edit`)}>Update</button>
-                            <OpenModalButton
-                                buttonText={"Delete"}
-                                modalComponent={ <DeleteSpotModal spotId={spot.id} />}
-                            />
-                        </div>
-                    ))}
+                {Object.values(userSpotsArray).map((spot) => (
+                    <div key={spot.id} className={styles.card}>
+                        <SpotCard key={spot.id} spot={spot} />
+                        <button
+                            onClick={() => navigate(`/update-spot/${spot.id}`)}
+                        >
+                            Update
+                        </button>
+                        <OpenModalButton
+                            buttonText={"Delete"}
+                            modalComponent={
+                                <DeleteSpotModal spotId={spot.id} />
+                            }
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     );

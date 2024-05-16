@@ -1,13 +1,15 @@
+// CreateSpot.jsx
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as spotActions from "../../store/spots";
 import { useNavigate } from "react-router-dom";
-// import styles from "./CreateSpot.module.css";
 import styles from "./CreateSpot.module.css";
 
 export default function CreateSpot() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
+    const [update, setUpdate] = useState(false); 
     const [formData, setFormData] = useState({
         country: "",
         address: "",
@@ -15,8 +17,8 @@ export default function CreateSpot() {
         state: "",
         lat: "",
         lng: "",
-        name: "",
         description: "",
+        name: "",
         price: "",
         previewImg: "",
         img2: "",
@@ -24,39 +26,37 @@ export default function CreateSpot() {
         img4: "",
         img5: "",
     });
-    const [errors, setErrors] = useState({});
 
-    const inputs = [
-        {
-            name: "country",
-            placeholder: "Country",
-            type: "text",
-            label: "true",
-        },
-        {
-            name: "address",
-            placeholder: "Street Address",
-            type: "text",
-            label: "true",
-        },
-        { name: "city", placeholder: "City", type: "text", label: "true" },
-        { name: "state", placeholder: "State", type: "text", label: "true" },
-        { name: "lat", placeholder: "Latitude", type: "text", label: "true" },
-        { name: "lng", placeholder: "Longitude", type: "text", label: "true" },
-        { name: "description", placeholder: "Description", type: "textarea" },
-        {
-            name: "name",
-            placeholder: "Name of your spot",
-            type: "text",
-            label: "true",
-        },
-        { name: "price", placeholder: "Price per night (USD)", type: "number" },
-        { name: "previewImg", placeholder: "Preview Image URL", type: "text" },
-        { name: "img2", placeholder: "Image URL", type: "text" },
-        { name: "img3", placeholder: "Image URL", type: "text" },
-        { name: "img4", placeholder: "Image URL", type: "text" },
-        { name: "img5", placeholder: "Image URL", type: "text" },
+    // inputs to  be refactored into useForm.js
+    const inputNames = Object.keys(formData);
+
+
+    const placeholders = [
+        "Country",
+        "Address",
+        "City",
+        "State",
+        "Latitude",
+        "Longitude",
+        "Description", // no label
+        "Name",
+        "Price per night (USD)", // no label
+        "Preview Image URL", // no label
+        "Image URL", // no label
+        "Image URL", // no label
+        "Image URL", // no label
+        "Image URL", // no label
     ];
+
+    const inputs = inputNames.map((name, index) => ({
+        name,
+        label: (index === 6 || index > 7) ? null : placeholders[index],
+        placeholder: update ? spot[name] : placeholders[index],
+        // type: type[index],
+        type: name === 'description' ? 'textarea' :
+              name === 'price' ? 'number' :
+              'text',
+    }));
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -76,18 +76,20 @@ export default function CreateSpot() {
                     fieldCheck[key] = "Please write at least 30 characters";
                 } else if (key === "previewImg") {
                     fieldCheck[key] = "Preview image is required";
+                } else if (key === "lat") {
+                    fieldCheck[key] = "Latitude is required";
+                } else if (key === "lng") {
+                    fieldCheck[key] = "Longitude is required";
                 } else if (key.slice(0, 3) !== "img") {
                     fieldCheck[key] = `${key[0].toUpperCase()}${key.slice(
                         1
                     )} is required`;
                 }
             }
+            if (formData[key].length && (key === "previewImg" || key.slice(0, 3) === "img") && !formData[key].match(/\.(png|jpe?g)$/i)) {
+                fieldCheck[key] = "Image URL must end in .png, .jpg, or .jpeg.";
+            }
         });
-
-        // const urlValidator = (url) => {
-        //     const regex = /\.(png|jpe?g)$/i;
-        //     return regex.test(url);
-        // };
 
         const urls = [
             formData.previewImg,
@@ -96,12 +98,6 @@ export default function CreateSpot() {
             formData.img4,
             formData.img5,
         ];
-
-        // const urlErrors = urls.forEach((url, index) => {
-        //     if (!urlValidator(url) && url) {
-        //         fieldCheck[url] = "Please submit a valid image URL.";
-        //     }
-        // });
 
         if (!Object.keys(fieldCheck).length) {
             const payload = {};
@@ -142,7 +138,7 @@ export default function CreateSpot() {
     return (
         <div className={styles.createSpotPage}>
             <form className={styles.createSpotForm} onSubmit={handleSubmit}>
-                <h2 id="title">Create a newSpot</h2>
+                <h2 id="title">Create a new Spot</h2>
                 <h3 id="subtitle">Where&apos;s your spot located?</h3>
                 <p id="dont-worry">
                     Guests will only get your exact address once they booked a
@@ -151,9 +147,9 @@ export default function CreateSpot() {
                 <div className={styles.inputs}>
                     {inputs.map((input) => (
                         <div key={input.name} className={styles.singleInput}>
-                            {input.label === "true" && (
+                            {input.label && (
                                 <label htmlFor={input.name}>
-                                    {input.placeholder}
+                                    {input.label}
                                 </label>
                             )}
                             {input.type !== "textarea" ? (
