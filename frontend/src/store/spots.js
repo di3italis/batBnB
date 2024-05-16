@@ -173,7 +173,6 @@ export const deleteSpotThunk = (spotId) => async (dispatch) => {
             method: "DELETE",
         })
         if (res.ok) {
-            const data = await res.json();
             dispatch(deleteSpot(spotId))
         }
     } catch (error) {
@@ -228,7 +227,7 @@ const spotsReducer = (state = initialState, action) => {
             return { ...state, [id]: action.payload };
         }
         // -------------------GET CURRENT USER SPOTS-------------------
-        case GET_CURRENT_USER_SPOTS:
+        case GET_CURRENT_USER_SPOTS: {
             // const newState = structuredClone(state);
             const newState = {};
             action.payload.forEach((spot) => {
@@ -236,6 +235,7 @@ const spotsReducer = (state = initialState, action) => {
             });
             // newState[spots]= action.payload;
             return newState;
+        }
         // -------------------POST SPOT-------------------
         case POST_SPOT: {
             return { ...state, [action.payload.id]: action.payload };

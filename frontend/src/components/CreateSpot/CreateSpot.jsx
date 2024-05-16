@@ -9,7 +9,8 @@ export default function CreateSpot() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
-    const [update, setUpdate] = useState(false); 
+    const spot = null;
+    const update = false; 
     const [formData, setFormData] = useState({
         country: "",
         address: "",

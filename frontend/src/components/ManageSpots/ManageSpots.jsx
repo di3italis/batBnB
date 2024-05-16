@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useModal } from "../../context/Modal";
+// import { useModal } from "../../context/Modal";
 import OpenModalButton from "../OpenModalButton";
 import DeleteSpotModal from "../DeleteSpotModal";
 import * as spotActions from "../../store/spots";
@@ -10,7 +10,7 @@ import SpotCard from "../SpotCard";
 import styles from "./ManageSpots.module.css";
 
 export default function ManageSpots() {
-    const { closeModal } = useModal();
+    // const { closeModal } = useModal();
     const navigate = useNavigate();
     // the old state is rendering for a split second before the new state is rendered, so I am implementing a loading state
     const [loading, setLoading] = useState(true);
@@ -35,7 +35,7 @@ export default function ManageSpots() {
         return (
             <div className={styles.main}>
                 <div>Spots Not Found!</div>
-                <button onClick={() => handleDelete}>Create a New Spot</button>
+                <button onClick={navigate('/create-spot')}>Create a New Spot</button>
             </div>
         );
     }

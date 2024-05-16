@@ -91,16 +91,18 @@ export default function reviewsReducer(state = initialState, action) {
                 ...action.payload,
             };
         }
-        case POST_REVIEW:
+        case POST_REVIEW: {
             const { id } = action.payload;
             return {
                 ...state,
                 [id]: action.payload,
             }
-        case DELETE_REVIEW:
+        }
+        case DELETE_REVIEW: {
             const newState = { ...state };
             delete newState[action.reviewId];
             return newState;
+        }
         default:
             return state;
     }

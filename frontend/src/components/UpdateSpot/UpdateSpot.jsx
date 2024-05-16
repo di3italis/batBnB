@@ -1,5 +1,5 @@
 // UpdateSpot.jsx
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import * as formActions from "../../hooks/useForm";
@@ -17,9 +17,9 @@ export default function UpdateSpot() {
         dispatch(spotActions.getSpotDetailsThunk(spotId));
     }, [dispatch, spotId]);
 
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [errors, setErrors] = useState({});
-    const [update, setUpdate] = useState(true);
+    const update = true;
     const [formData, setFormData] = useState({
         country: "",
         address: "",
@@ -40,7 +40,7 @@ export default function UpdateSpot() {
     useEffect(() => {
         const fetchSpot = async () => {
             await dispatch(spotActions.getSpotDetailsThunk(spotId));
-            setLoading(false);
+            // setLoading(false);
         };
         if (!spot) {
             fetchSpot();
@@ -62,7 +62,7 @@ export default function UpdateSpot() {
                     img4: spot?.SpotImages[3]?.url || "",
                     img5: spot?.SpotImages[4]?.url || "",
                 });
-                setLoading(false);
+                // setLoading(false);
             }
         }
     }, [dispatch, spotId, spot /*setFormData*/]);
@@ -141,13 +141,6 @@ export default function UpdateSpot() {
             }
         });
 
-        const urls = [
-            formData.previewImg,
-            formData.img2,
-            formData.img3,
-            formData.img4,
-            formData.img5,
-        ];
 
         if (!Object.keys(fieldCheck).length) {
             const payload = {};

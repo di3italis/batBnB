@@ -4,7 +4,7 @@ import * as sessionActions from '../../store/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink /*, useNavigate*/ } from "react-router-dom";
 // import './ProfileButton.css';
 
 function ProfileButton({ user }) {
