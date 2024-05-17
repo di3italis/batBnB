@@ -31,7 +31,7 @@ const SpotCard = ({ spot }) => {
                </div>
              </div>
              <div className={styles.bottomRow}>
-               <p className={styles.price}>${spot.price} per night</p>
+               <p className={styles.price}>${spot.price} night</p>
              </div>
            </div>
       </Link>

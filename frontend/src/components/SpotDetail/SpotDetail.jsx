@@ -1,52 +1,40 @@
+// SpotDetail.jsx
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as spotActions from "../../store/spots";
-import OpenModalButton from "../OpenModalButton";
-import NewReviewModal from "../NewReviewModal";
 import SpotReviews from "../SpotReviews";
 import { TbBat } from "react-icons/tb";
 import styles from "./SpotDetail.module.css";
 
 const SpotDetail = () => {
-    const { spotId } = useParams();
-    const currentSpotId = Number(spotId);
-    const spot = useSelector((state) => state.spots[currentSpotId]);
-    const currentUser = useSelector(state => state.session.user);
-    const spotReviews = useSelector((state) => state.reviews); // changed from currentSpotId to spotId
-    const previewImage = useSelector((state) => state.spots[currentSpotId]?.SpotImages?.find((image) => image.preview));
-    // const previewImage = useSelector((state) => getPreviewImage(state, currentSpotId));
-
-    // console.log("spot", spot);
+    const { spotId: spotIdParam } = useParams();
+    const spotId = Number(spotIdParam);
+    const spot = useSelector((state) => state.spots[spotId]);
+    const previewImage = useSelector((state) =>
+        state.spots[spotId]?.SpotImages?.find((image) => image.preview)
+    );
 
     const dispatch = useDispatch();
 
-    const spotReviewsArray = spotReviews ? Object.values(spotReviews) : [];
-    // console.log("SpotDetail.spotReviewsArray", spotReviewsArray);
-
     useEffect(() => {
-        // console.log("DISPATCHING");
         dispatch(spotActions.getSpotDetailsThunk(spotId));
-        return () => {
-            // console.log("CLEANING UP");
-        };
-    }, [dispatch, spotId, spotReviews]);
+        return () => {};
+    }, [dispatch, spotId]);
 
     const handleClickReserve = () => {
         return window.alert("Feature coming soon");
     };
 
-    // console.log("RENDERING");
-
-    const canPostReview = currentUser && currentUser.id !== spot?.ownerId && !spotReviewsArray?.some((review) => review.userId === currentUser.id);
-
     return (
         <div className={styles.spotDetailPage}>
+            {/* A. CONTAINER */}
             <div className={styles.spotDetailContainer}>
                 <h1 className={styles.spotName}>{spot?.name}</h1>
                 <div className={styles.location}>
                     {spot?.city}, {spot?.state}, {spot?.country}
                 </div>
+                {/*  A. IMAGE GALLERY */}
                 <div className={styles.imageGallery}>
                     <div className={styles.mainImage}>
                         <img
@@ -69,8 +57,8 @@ const SpotDetail = () => {
                         ))}
                     </div>
                 </div>{" "}
-                {/*  END imageGallery */}
-                {/* START LOWER DETAILS */}
+                {/* Z. IMAGE GALLERY */}
+                {/* A. LOWER DETAILS */}
                 <div className={styles.lowerContainer}>
                     <div className={styles.hostedBy}>
                         Hosted by {spot?.Owner?.firstName}{" "}
@@ -81,11 +69,16 @@ const SpotDetail = () => {
                     </div>
                     <div className={styles.priceResContainer}>
                         <div className={styles.price}>
-                            ${spot?.price} per night
+                            ${spot?.price} night
                         </div>
                         <TbBat />
                         {spot && spot.avgRating != null && (
-                            <> {typeof spot.avgRating === "number" ? spot.avgRating.toFixed(1) : parseFloat(spot.avgRating).toFixed(1)}</>
+                            <>
+                                {" "}
+                                {typeof spot.avgRating === "number"
+                                    ? spot.avgRating.toFixed(1)
+                                    : parseFloat(spot.avgRating).toFixed(1)}
+                            </>
                         )}
                         {spot?.numReviews ? (
                             <> · {spot?.numReviews}</>
@@ -101,51 +94,15 @@ const SpotDetail = () => {
                             Reserve
                         </button>
                     </div>
-                    <div className={styles.reviewContainer}>
-                        <div className={styles.reviewHeader}>
-                            <TbBat />
-                        {spot && spot.avgRating != null && (
-                            <> {typeof spot.avgRating === "number" ? spot.avgRating.toFixed(1) : parseFloat(spot.avgRating).toFixed(1)}</>
-                        )}
-                            {spot?.numReviews ? (
-                                <> · {spot?.numReviews}</>
-                            ) : (
-                                <> New</>
-                            )}
-                            {spot?.numReviews === 1 && <> Review</>}
-                            {spot?.numReviews > 1 && <> Reviews</>}
-                        </div>
-                        {canPostReview && (
-                                <div className="review-modal">
-                                    {spot && currentUser !== null && (
-                                        <OpenModalButton
-                                            modalComponent={
-                                                <NewReviewModal
-                                                    spotId={spotId}
-                                                />
-                                            }
-                                            buttonText={"Post Your Review"}
-                                        />
-                                    )}
-                                </div>
-                            )}
-                        {!spot?.numReviews ? (
-                            currentUser &&
-                            currentUser?.id === spot?.ownerId && (
-                                <SpotReviews spotId={spotId} />
-                            )
-                        ) : (
-                            <SpotReviews />
-                        )}
-                        {spot?.numReviews === 0 && (
-                            <h3>Be the first to post a review!</h3>
-                        )}
-                    </div>
+                    {/* A. SPOTREVIEWS.JSX */}
+                    <SpotReviews spotId={spotId} />
+                    {/* Z. SPOTREVIEWS.JSX */}
                 </div>
+                {/* Z. LOWER DETAILS */}
             </div>
+            {/* Z. CONTAINER */}
         </div>
     );
 };
-
 
 export default SpotDetail;

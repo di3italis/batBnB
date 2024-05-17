@@ -39,7 +39,7 @@ export default function CreateSpot() {
         "State",
         "Latitude",
         "Longitude",
-        "Description", // no label
+        "Please write at least 30 characters", // no label
         "Name",
         "Price per night (USD)", // no label
         "Preview Image URL", // no label
@@ -51,7 +51,9 @@ export default function CreateSpot() {
 
     const inputs = inputNames.map((name, index) => ({
         name,
-        label: (index === 6 || index > 7) ? null : placeholders[index],
+        label: (index === 6 || index > 7) ? null :
+                (index === 1) ? "Street Address" :
+                placeholders[index],
         placeholder: update ? spot[name] : placeholders[index],
         // type: type[index],
         type: name === 'description' ? 'textarea' :
@@ -189,7 +191,7 @@ export default function CreateSpot() {
                     <div className={styles.titleSection}>
                         <h3>Create a title for your spot</h3>
                         <p id="title">
-                            Catch guests`@apos` attention with a spot title that
+                            Catch guests&apos; attention with a spot title that
                             highlights what makes your place special.
                         </p>
                     </div>
@@ -201,10 +203,9 @@ export default function CreateSpot() {
                         </p>
                     </section>
                     <section className={styles.photoSection}>
-                        <h3>Show off your spot with photos</h3>
+                        <h3>Liven up your spot with photos</h3>
                         <p>
-                            First impressions matter! Upload photos that
-                            showcase your spot`&apos`s best features.
+                            Submit a link to at least one photo to publish your spot. 
                         </p>
                     </section>
                     <button className={styles.button} type="submit">

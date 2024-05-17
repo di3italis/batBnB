@@ -45,7 +45,7 @@ export default function UpdateSpot() {
         if (!spot) {
             fetchSpot();
         } else {
-            if (spot && spot.SpotImages) {
+            if (spot.SpotImages) {
                 setFormData({
                     country: spot?.country,
                     address: spot?.address,
@@ -81,7 +81,7 @@ export default function UpdateSpot() {
         "State",
         "Latitude",
         "Longitude",
-        "Description", // no label
+        "Please write at least 30 characters", // no label
         "Name",
         "Price per night (USD)", // no label
         "Preview Image URL", // no label
@@ -93,8 +93,10 @@ export default function UpdateSpot() {
 
     const inputs = inputNames.map((name, index) => ({
         name,
-        label: index === 6 || index > 7 ? null : placeholders[index],
-        placeholder: update ? spot[name] : placeholders[index],
+        label: (index === 6 || index > 7) ? null :
+                (index === 1) ? "Street Address" :
+                placeholders[index],
+        placeholder: update && spot ? spot[name] : placeholders[index],
         // type: type[index],
         type:
             name === "description"
@@ -140,7 +142,6 @@ export default function UpdateSpot() {
                 fieldCheck[key] = "Image URL must end in .png, .jpg, or .jpeg.";
             }
         });
-
 
         if (!Object.keys(fieldCheck).length) {
             const payload = {};

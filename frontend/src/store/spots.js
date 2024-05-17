@@ -11,7 +11,6 @@ const UPDATE_SPOT = "spots/UPDATE_SPOT";
 const ERROR = "spots/ERROR";
 
 // -------------------ACTIONS-------------------
-// -------------------ACTIONS-------------------
 
 // -------------------GET ACTION-------------------
 export const getSpots = (payload) => {
@@ -77,7 +76,6 @@ export const handleError = (error) => {
 };
 
 
-// -------------------THUNKS-------------------
 // -------------------THUNKS-------------------
 
 // -------------------GET THUNK-------------------

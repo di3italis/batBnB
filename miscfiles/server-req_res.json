@@ -1,0 +1,3212 @@
+{
+	"id": "ebe3b29b-9522-417b-a7b8-1e4d1a4421c2",
+	"name": "AirBNB_Comprehensive",
+	"timestamp": "2024-05-17T03:02:04.076Z",
+	"collection_id": "29691797-f27a73c1-33ad-4bdd-9c0f-abd1572ee425",
+	"folder_id": 0,
+	"environment_id": "29691797-01e50c88-3142-45ca-b7b1-e1ffc7fc5558",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-05-17T03:02:00.099Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "fcb2cd65-88ad-4570-b28d-dd933ba26752",
+			"name": "Get CSRF Token",
+			"url": "http://localhost:8000/api/csrf/restore",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d77fcaa5-20bf-4a87-a9f7-0410cd470549",
+			"name": "REQ AUTH - Get Spots of Current User",
+			"url": "http://localhost:8000/api/spots/current",
+			"time": 25,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				25
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "10bd877b-2620-483a-a90d-9d64bfe6ad94",
+			"name": "REQ AUTH - Get Reviews of Current User",
+			"url": "http://localhost:8000/api/reviews/current",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b7aeb347-1977-4e15-a4ae-18ee7093b91a",
+			"name": "REQ AUTH - Get All Current User's Bookings",
+			"url": "http://localhost:8000/api/bookings/current",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b0c0f24f-57b3-47ff-82b7-ca9081c41b3d",
+			"name": "REQ AUTH - Get All Bookings for a Spot",
+			"url": "http://localhost:8000/api/spots/5000/bookings",
+			"time": 11,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d6a36976-1476-48b3-952c-5e15eb3a215d",
+			"name": "REQ AUTH - Create a Spot",
+			"url": "http://localhost:8000/api/spots",
+			"time": 18,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2f67f9eb-2cc2-4ea8-a5cc-e350211a4619",
+			"name": "REQ AUTH - Create an Image for a Spot",
+			"url": "http://localhost:8000/api/spots/5000/images",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0180569d-3f5b-4e4b-8344-fed3d4ef9ba3",
+			"name": "REQ AUTH - Create a Review for a Spot",
+			"url": "http://localhost:8000/api/spots/5000/reviews",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "45a61a4e-732b-4cb6-a194-247bbc858a38",
+			"name": "REQ AUTH - Create an Image for a Review",
+			"url": "http://localhost:8000/api/reviews/5000/images",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e70b23d7-974e-4583-97c7-9c9524474ef1",
+			"name": "REQ AUTH - Create a Booking",
+			"url": "http://localhost:8000/api/spots/5000/bookings",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2e78c099-207c-494a-915f-7d6da4b142ee",
+			"name": "REQ AUTH - Edit a Spot",
+			"url": "http://localhost:8000/api/spots/5000",
+			"time": 15,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "29092f55-690d-42c5-bfac-112dd7e450cd",
+			"name": "REQ AUTH - Edit a Review",
+			"url": "http://localhost:8000/api/reviews/5000",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d4bef413-4ed2-4d01-ae86-18440c68b51c",
+			"name": "REQ AUTH - Edit a Booking",
+			"url": "http://localhost:8000/api/bookings/5000",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0e19f121-232f-478a-9253-641a3082a4ae",
+			"name": "REQ AUTH - Delete a Spot Image",
+			"url": "http://localhost:8000/api/spot-images/5000",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "34836c99-9108-4562-9d6d-161b0faf54c6",
+			"name": "REQ AUTH - Delete a Review Image",
+			"url": "http://localhost:8000/api/review-images/5000",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "bef0d076-11a1-4890-a6c5-1e65b5c392a9",
+			"name": "REQ AUTH - Delete a Review",
+			"url": "http://localhost:8000/api/reviews/5000",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "da84091c-a3a1-47e0-a82d-b0f0e7f522ee",
+			"name": "REQ AUTH - Delete a Booking",
+			"url": "http://localhost:8000/api/bookings/5000",
+			"time": 7,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "66f3aa19-993d-4f75-826f-704dfe86a4d5",
+			"name": "REQ AUTH - Delete a Spot",
+			"url": "http://localhost:8000/api/spots/5000",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "647629b5-ce7b-41db-8bbf-b3bebdeb1835",
+			"name": "Get Current User - Not Logged In",
+			"url": "http://localhost:8000/api/session",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4d5688e5-0bf6-404f-b003-a8fc85fc5ea2",
+			"name": "Sign Up",
+			"url": "http://localhost:8000/api/users",
+			"time": 101,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				101
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "68d670be-b56b-4296-8462-69b87120424c",
+			"name": "ERROR - Sign Up - Duplicate Email",
+			"url": "http://localhost:8000/api/users",
+			"time": 77,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				77
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e5096c5a-bb0e-4ee2-bd87-da4cbcdbb179",
+			"name": "ERROR - Sign Up - Duplicate Username",
+			"url": "http://localhost:8000/api/users",
+			"time": 75,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				75
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5049d8d6-43b1-4fc0-a795-a738c2349821",
+			"name": "ERROR - Sign Up - Body Validation",
+			"url": "http://localhost:8000/api/users",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "186338b2-d12f-4334-9a24-0d435c7dd958",
+			"name": "Log In - Username",
+			"url": "http://localhost:8000/api/session",
+			"time": 74,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				74
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7db1e0c1-2c8a-4cd6-9ede-f5ef1cda5b82",
+			"name": "Log Out",
+			"url": "http://localhost:8000/api/session",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "98460a73-525a-48d6-9144-40391a4df975",
+			"name": "ERROR - Log In - Invalid Credentials",
+			"url": "http://localhost:8000/api/session",
+			"time": 73,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				73
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7db4f132-cc76-40ab-8842-05d3d8317016",
+			"name": "ERROR - Log In - Body Validation",
+			"url": "http://localhost:8000/api/session",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				2
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0cb5102b-e34f-4ca4-845d-eb1092a97e9a",
+			"name": "Log In - Email",
+			"url": "http://localhost:8000/api/session",
+			"time": 73,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				73
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4f1d8273-25ba-47cf-af05-5a03a62488e7",
+			"name": "Get Current User",
+			"url": "http://localhost:8000/api/session",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "79a3cf89-8c92-4b6b-aae0-f5a770af8146",
+			"name": "Get All Spots",
+			"url": "http://localhost:8000/api/spots",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "37eceddc-4087-496e-bab6-9ca2df6e54ea",
+			"name": "Create a Spot",
+			"url": "http://localhost:8000/api/spots",
+			"time": 5,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "aa9abedf-6533-44b8-826e-c683d1a6465c",
+			"name": "Create an Image for a Spot",
+			"url": "http://localhost:8000/api/spots/3/images",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ba916d70-20b9-4f0b-88d8-5064ff2237a4",
+			"name": "ERROR - Create a Spot - Body Validation",
+			"url": "http://localhost:8000/api/spots",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ee857c84-073a-46cc-b2d4-45193756dc2b",
+			"name": "ERROR - Create an Image for a Spot - Invalid Spot Id",
+			"url": "http://localhost:8000/api/spots/5000/images",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0f350f87-5535-4c7b-8267-ad8e96802f4b",
+			"name": "Get All Spots - Verify Creation, Prevention, Image Update",
+			"url": "http://localhost:8000/api/spots",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "194cd744-818b-4448-b05c-9b4541f2d984",
+			"name": "Get Spots of Current User - Verify Creation, Prevention, Image Update",
+			"url": "http://localhost:8000/api/spots/current",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ab562605-303e-461a-8754-299eb167e0eb",
+			"name": "Get Details of a Spot by Id - Verify Creation, Image Update",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "95da3c7f-469c-4e97-bce3-e47cbb273dcc",
+			"name": "ERROR - Get Details of a Spot by Id - Invalid Spot Id",
+			"url": "http://localhost:8000/api/spots/5000",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f1e8b06b-501c-417e-85b3-37ba98fd0402",
+			"name": "Edit a Spot",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b5e9f357-8f07-4fa0-8b0a-e1809d3ab507",
+			"name": "ERROR - Edit a Spot - Body Validation",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8fd3e559-da46-4b94-b765-be5894422078",
+			"name": "ERROR - Edit a Spot - Invalid Spot Id",
+			"url": "http://localhost:8000/api/spots/5000",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f8bffe12-ea5c-48d9-9169-ae1fa928cb79",
+			"name": "Get All Spots - Verify Edits",
+			"url": "http://localhost:8000/api/spots",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d6c5011c-cd53-4418-a1a1-58214af93e81",
+			"name": "Create a 2nd User for Testing",
+			"url": "http://localhost:8000/api/users",
+			"time": 78,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				78
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7d1772a4-bb8d-4b02-9384-a34ccfc0044d",
+			"name": "***** Log In as 2nd User *****",
+			"url": "http://localhost:8000/api/session",
+			"time": 76,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				76
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7cb071d8-950b-498c-9850-d210c3a4455a",
+			"name": "NOT AUTHED - Create an Image for a Spot",
+			"url": "http://localhost:8000/api/spots/3/images",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "35fbe8bb-d8f7-4087-9c65-fd966688c371",
+			"name": "NOT AUTHED - Edit a Spot",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7577fa52-7855-4076-8435-ca8c475e1017",
+			"name": "NOT AUTHED - Delete a Spot",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b0326cd2-1eb0-4065-8fe4-6ae34961f484",
+			"name": "NOT AUTHED - Delete a Spot Image",
+			"url": "http://localhost:8000/api/spot-images/14",
+			"time": 4,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a5cf8d73-62d6-4fa0-adbd-3f9b51914ba4",
+			"name": "ERROR - Create a Review - Body Validation",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a1711306-74cb-4708-92b1-9a90b276471f",
+			"name": "ERROR - Create a Review - Invalid Spot Id",
+			"url": "http://localhost:8000/api/spots/5000/reviews",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5b3941dc-a159-4e98-b4ba-6e17126769a1",
+			"name": "Create a Review",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e254493c-916c-4bed-9f5b-928802db6f9f",
+			"name": "ERROR - Create a Review - Already Reviewed",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8fbe6081-b5c6-48cb-92e0-f6518dfd6e7f",
+			"name": "ERROR - Create an Image for a Review  - Invalid Review Id",
+			"url": "http://localhost:8000/api/reviews/5000/images",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7ed83722-de72-4f1f-bec5-c0d5e6f0d924",
+			"name": "Create an Image for a Review - 1",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d1bb4d0a-265d-41bd-a393-7895225458d6",
+			"name": "Create an Image for a Review - 2",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6b22ac45-2831-4f69-a54e-060af72afa0d",
+			"name": "Create an Image for a Review - 3",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e6e1913e-580c-4136-aab2-929830fddd9c",
+			"name": "Create an Image for a Review - 4",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f0786d11-5dc8-4f97-8021-16e0ccc594d7",
+			"name": "Create an Image for a Review - 5",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4a3899bc-9832-4efe-809b-1e7ed6393368",
+			"name": "Create an Image for a Review - 6",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "671482af-1d1e-4c93-a209-1ce885201202",
+			"name": "Create an Image for a Review - 7",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a0d9bed5-94bd-42be-bd07-5b89f28e030c",
+			"name": "Create an Image for a Review - 8",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1dc6fa6f-610d-425f-aad1-fbbfeee91106",
+			"name": "Create an Image for a Review - 9",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7a1dd1b9-7e61-49c3-8ed1-dec799beb72a",
+			"name": "Create an Image for a Review - 10",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "54602fb3-d435-48bd-bfdb-85d6c94cf392",
+			"name": "ERROR - Create an Image for a Review - Limit Reached",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 11,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2528069a-6203-48d4-85a3-907f4370e062",
+			"name": "Get Reviews of Current User - Verify Creation, Prevention, Image Update",
+			"url": "http://localhost:8000/api/reviews/current",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cefc47a2-2ac4-497b-8559-dfde2ae85b62",
+			"name": "Get Reviews by Spot Id - Verify Creation, Prevention, Image Update",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fdbb88aa-e262-4600-abe8-37e79db80959",
+			"name": "ERROR - Get Reviews by Spot Id - Invalid Spot Id",
+			"url": "http://localhost:8000/api/spots/5000/reviews",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d1d1e226-9623-4927-bacc-ac3775ec1359",
+			"name": "Edit a Review",
+			"url": "http://localhost:8000/api/reviews/5",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6d9b1ae3-0616-4c04-84bc-700b6629d3e1",
+			"name": "ERROR - Edit a Review - Invalid Body",
+			"url": "http://localhost:8000/api/reviews/5",
+			"time": 11,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "249eeec0-dc99-406a-9fe3-59fc9b556ad2",
+			"name": "ERROR - Edit a Review - Invalid Review Id",
+			"url": "http://localhost:8000/api/reviews/5000",
+			"time": 13,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f00d54cf-4ba0-47de-b17d-0b928c27ab98",
+			"name": "Get Reviews of Current User - Verify Edits",
+			"url": "http://localhost:8000/api/reviews/current",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "765c46d8-c4a7-4ff6-8c0c-95941383ea6d",
+			"name": "Get Reviews by Spot Id - Verify Edits",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "09cfc55c-0905-4bee-b33f-67a0a6be719d",
+			"name": "Create a Booking Based on a Spot Id",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				21
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "091f0688-90c9-4fc3-be9d-b314976c7f76",
+			"name": "Create a 2nd Booking for Testing",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "aa0d4f38-bd75-4316-823c-7eae734c3c8b",
+			"name": "ERROR - Create a Booking - Conflicting Booking",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3c814fb6-7dde-40b9-92c4-9011fedba580",
+			"name": "ERROR - Create a Booking - Same Start & End Date",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3f041a93-d730-4829-aea2-17d9e5fdb479",
+			"name": "ERROR - Create a Booking - End Date Before Start Date",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f608c678-a11b-4067-a625-d476065bf0d9",
+			"name": "ERROR - Create a Booking - Start Date On Existing Start Date",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "22bed121-435e-4dcd-9aff-1fb0e13bbfb9",
+			"name": "ERROR - Create a Booking - Start Date On Existing End Date",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 14,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c82692e0-29ab-4f65-9054-55b1203b4735",
+			"name": "ERROR - Create a Booking - End Date On Existing Start Date",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 15,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ca4cd45b-ab88-492a-b1cd-8cf1ad11a9a3",
+			"name": "ERROR - Create a Booking - End Date On Existing End Date",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 20,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				20
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "65a0d83d-3cdf-432f-a67f-2e7aab1da98c",
+			"name": "ERROR - Create a Booking - Start Date During Existing Booking",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 8,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5a27623a-aaf2-4798-a79f-f1967fca4591",
+			"name": "ERROR - Create a Booking - End Date During Existing Booking",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 21,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				21
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8214badf-baf0-417a-a1e8-cac48e5c829e",
+			"name": "ERROR - Create a Booking - Dates Within Existing Booking",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 25,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				25
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "45b8670b-6d2b-4dfd-a2d0-034f8512046d",
+			"name": "ERROR - Create a Booking - Dates Surround Existing Booking",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 12,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8fd41893-1dcf-4985-a008-2af0ffb7a704",
+			"name": "ERROR - Create a Booking - Dates In The Past",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 12,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f74ef9ff-5584-43bf-8b84-d627448f28c8",
+			"name": "ERROR - Create a Booking - Invalid Spot Id",
+			"url": "http://localhost:8000/api/spots/5000/bookings",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8669d3df-580e-41ed-b51a-9350da0c86f9",
+			"name": "Get All Current User's Bookings - Verify Creation, Prevention",
+			"url": "http://localhost:8000/api/bookings/current",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1ab6e56f-142c-419c-915a-37136f1c0ce7",
+			"name": "Get All Bookings for a Spot By Id - Verify Creation, Prevention",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4db35a9e-b2e4-415c-a8b1-fcc6c19147a9",
+			"name": "ERROR - Get All Bookings for a Spot By Id - Invalid Id",
+			"url": "http://localhost:8000/api/spots/5000/bookings",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6f4d9135-e599-4a72-b7ca-05e41f5dc8b2",
+			"name": "Edit a Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f4c46484-dcaa-45a4-b261-0e02dd132267",
+			"name": "Edit a Booking - Does Not Conflict Within Itself",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1f814240-9bf6-4525-9ef3-a8e827a0944f",
+			"name": "Edit a Booking - Does Not Conflict Surrounding Itself",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d5c93588-e1c9-4509-ae9a-8f7d382090a2",
+			"name": "ERROR - Edit a Booking - Conflicting Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 7,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "54131b96-6383-424d-a05a-13452e2c12a4",
+			"name": "ERROR - Edit a Booking - Same Start & End Date",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3b0f8e44-b3a9-4b96-8001-279a2c4e62a9",
+			"name": "ERROR - Edit a Booking - End Date Before Start Date",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 22,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				22
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "30e7b26f-6768-447a-b505-95e8093c95e3",
+			"name": "ERROR - Edit a Booking - Start Date On Existing Start Date",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 6,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "079d7ac0-55f0-4b06-92b5-a88fa461d94d",
+			"name": "ERROR - Edit a Booking - Start Date On Existing End Date",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 6,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a6d47135-8e26-40ca-9cad-03059c8f1f2f",
+			"name": "ERROR - Edit a Booking - End Date On Existing Start Date",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 23,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				23
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "803d9ad8-90ca-4772-99a4-bb59c062110a",
+			"name": "ERROR - Edit a Booking - End Date On Existing End Date",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 8,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "674ca43f-aad9-44c7-b653-9010140450f5",
+			"name": "ERROR - Edit a Booking - Start Date During Existing Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 9,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d3c8ef59-d556-47ed-bf6f-bb1df8294ef2",
+			"name": "ERROR - Edit a Booking - End Date During Existing Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dbc2307e-1f4a-4658-935f-f99a5315d066",
+			"name": "ERROR - Edit a Booking - Dates Within Existing Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c31f9c97-c293-4244-b805-827b2b299a97",
+			"name": "ERROR - Edit a Booking - Dates Surround Existing Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 6,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d28ba16d-6137-4eb6-bc72-49ad12eb6f03",
+			"name": "ERROR - Edit a Booking - Dates In The Past",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 11,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "42021378-2864-4423-9b8d-6b4448d157af",
+			"name": "ERROR - Edit a Booking - Invalid Booking Id",
+			"url": "http://localhost:8000/api/bookings/5000",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6e7ee896-5bf2-46d3-bd30-73ffb5202684",
+			"name": "Get All Current User's Bookings - Verify Edits",
+			"url": "http://localhost:8000/api/bookings/current",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7139c5c5-56e1-47b4-87e5-536b0b29f970",
+			"name": "Get All Bookings for a Spot By Id - Verify Edits",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "65e08387-d47c-4ba7-ab17-8a4caa78c74f",
+			"name": "***** Log In as Original User *****",
+			"url": "http://localhost:8000/api/session",
+			"time": 88,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				88
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f025ec01-976a-4eb0-80df-b21988d097e3",
+			"name": "Get All Bookings for a Spot By Id - Owned By The User",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "bf30b5a9-8cc6-42dc-a14b-5447bd74e65d",
+			"name": "NOT AUTHED - Create an Image for a Review",
+			"url": "http://localhost:8000/api/reviews/5/images",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cd5dbaa4-6dcf-4926-a78d-e8073ab51f3f",
+			"name": "NOT AUTHED - Create a Booking Based on a Spot Id",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9ba0db6a-6662-4d2c-9f86-7196b78b3952",
+			"name": "NOT AUTHED - Edit a Review",
+			"url": "http://localhost:8000/api/reviews/5",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "970f7123-6285-493d-8439-a1c77a6a553a",
+			"name": "NOT AUTHED - Edit a Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "82ee2054-ed8a-489c-91aa-02d139f056d8",
+			"name": "NOT AUTHED - Delete a Review Image",
+			"url": "http://localhost:8000/api/review-images/15",
+			"time": 5,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ab94db18-8221-44f0-a575-5cf240829694",
+			"name": "NOT AUTHED - Delete a Review",
+			"url": "http://localhost:8000/api/reviews/5",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9fab3381-9fc5-45f6-a634-67fa84667cc4",
+			"name": "Create a 3rd User for Testing",
+			"url": "http://localhost:8000/api/users",
+			"time": 78,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				78
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b5349ce7-ab58-4417-ac3a-87eca376f80d",
+			"name": "***** Log In as 3rd User *****",
+			"url": "http://localhost:8000/api/session",
+			"time": 73,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				73
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8579014f-e1d6-4097-8ac1-fc8fceb85921",
+			"name": "NOT AUTHED - Delete a Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a31c5033-9c7d-4b23-865f-38052e2947d8",
+			"name": "***** Log In as 2nd User Again *****",
+			"url": "http://localhost:8000/api/session",
+			"time": 73,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				73
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6c7c3e7b-0286-431a-809e-01eb9a79d13a",
+			"name": "Delete a Review Image",
+			"url": "http://localhost:8000/api/review-images/15",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6c6543e5-e17b-46a8-8c78-6598c00aa10f",
+			"name": "ERROR - Delete a Review Image - Invalid Id",
+			"url": "http://localhost:8000/api/review-images/15",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8eff222b-91d0-4250-a372-5373cdf362c7",
+			"name": "Get Reviews of Current User - Verify Image Delete",
+			"url": "http://localhost:8000/api/reviews/current",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c59391bb-e0cd-4595-906b-66a4e12542b0",
+			"name": "Get Reviews by Spot Id - Verify Image Delete",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d52c5967-ee04-4a2b-b74b-68f70618ee7b",
+			"name": "Delete a Review",
+			"url": "http://localhost:8000/api/reviews/5",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "055257fc-708b-4517-b6b5-c4539afa747c",
+			"name": "ERROR - Delete a Review - Invalid Id",
+			"url": "http://localhost:8000/api/reviews/5",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b6644b24-d91e-43d1-947e-4909fef2b408",
+			"name": "Get Reviews of Current User - Verify Review Delete",
+			"url": "http://localhost:8000/api/reviews/current",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b7109aa3-dc33-4ae1-889d-6068006f2eb9",
+			"name": "Get Reviews by Spot Id - Verify Review Delete",
+			"url": "http://localhost:8000/api/spots/3/reviews",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "66fa35dc-581e-406d-92ad-2767b2d76872",
+			"name": "Delete a Booking",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f1b4599f-9e30-495e-a5a9-da87784670c8",
+			"name": "ERROR - Delete a Booking - Invalid Id",
+			"url": "http://localhost:8000/api/bookings/3",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c0e1e704-9701-42b7-8d8a-15681e5066b2",
+			"name": "Get All Current User's Bookings - Verify Deletion",
+			"url": "http://localhost:8000/api/bookings/current",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "436439a6-8aea-44d7-94cc-5d026908de29",
+			"name": "Get All Bookings for a Spot By Id - Verify Deletion",
+			"url": "http://localhost:8000/api/spots/3/bookings",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "64d042f5-b324-4471-bd29-375f0f2afb68",
+			"name": "***** Log In as Original User Again *****",
+			"url": "http://localhost:8000/api/session",
+			"time": 74,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				74
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d793c204-a719-4346-9f60-7eaeb0b12328",
+			"name": "Delete a Spot Image",
+			"url": "http://localhost:8000/api/spot-images/14",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "eb26b86f-3433-4818-9ff3-63bfba0b4533",
+			"name": "ERROR - Delete a Spot Image - Invalid Id",
+			"url": "http://localhost:8000/api/spot-images/14",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c47c2409-050c-4756-b9a6-d5a8bada94b7",
+			"name": "Get All Spots - Verify Image Delete",
+			"url": "http://localhost:8000/api/spots",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "12f6b180-98e6-4e7a-9287-d0d4f2e0c6ef",
+			"name": "Get Spots of Current User - Verify Image Delete",
+			"url": "http://localhost:8000/api/spots/current",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ff41c249-282d-4a84-b76f-d83e62334744",
+			"name": "Get Details of a Spot by Id - Verify Image Delete",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "eddd8cd0-f1d0-49ff-8698-37bf2eec7aa6",
+			"name": "Delete a Spot",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e14028df-877f-425b-b4e8-a25935c3cfb0",
+			"name": "ERROR - Delete a Spot - Invalid Id",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 5,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "54a468bd-129f-4d74-849f-9ca0f95a961f",
+			"name": "Get All Spots - Verify Spot Delete",
+			"url": "http://localhost:8000/api/spots",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dcfa4966-5084-4f6e-b32b-c6dd0e36e131",
+			"name": "Get Spots of Current User - Verify Spot Delete",
+			"url": "http://localhost:8000/api/spots/current",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ec6dd8ed-5226-4550-80c3-c6e28f905343",
+			"name": "ERROR - Get Details of a Spot by Id - Invalid Id",
+			"url": "http://localhost:8000/api/spots/3",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4192b9ec-cde0-4887-a6fa-336f6112227e",
+			"name": "Get All Spots With Params",
+			"url": "http://localhost:8000/api/spots?page=2&size=1&minPrice=100",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "16b96594-143d-46b4-ad37-a583fb55cac5",
+			"name": "ERROR - Get All Spots With Params - Invalid Params",
+			"url": "http://localhost:8000/api/spots?page=20&size=-1&minLat=-91&maxLat=91&minLng=-181&maxLng=181&minPrice=-1&maxPrice=-1",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1946,
+	"collection": {
+		"requests": [
+			{
+				"id": "fcb2cd65-88ad-4570-b28d-dd933ba26752",
+				"method": "GET"
+			},
+			{
+				"id": "d77fcaa5-20bf-4a87-a9f7-0410cd470549",
+				"method": "GET"
+			},
+			{
+				"id": "10bd877b-2620-483a-a90d-9d64bfe6ad94",
+				"method": "GET"
+			},
+			{
+				"id": "b7aeb347-1977-4e15-a4ae-18ee7093b91a",
+				"method": "GET"
+			},
+			{
+				"id": "b0c0f24f-57b3-47ff-82b7-ca9081c41b3d",
+				"method": "GET"
+			},
+			{
+				"id": "d6a36976-1476-48b3-952c-5e15eb3a215d",
+				"method": "POST"
+			},
+			{
+				"id": "2f67f9eb-2cc2-4ea8-a5cc-e350211a4619",
+				"method": "POST"
+			},
+			{
+				"id": "0180569d-3f5b-4e4b-8344-fed3d4ef9ba3",
+				"method": "POST"
+			},
+			{
+				"id": "45a61a4e-732b-4cb6-a194-247bbc858a38",
+				"method": "POST"
+			},
+			{
+				"id": "e70b23d7-974e-4583-97c7-9c9524474ef1",
+				"method": "POST"
+			},
+			{
+				"id": "2e78c099-207c-494a-915f-7d6da4b142ee",
+				"method": "PUT"
+			},
+			{
+				"id": "29092f55-690d-42c5-bfac-112dd7e450cd",
+				"method": "PUT"
+			},
+			{
+				"id": "d4bef413-4ed2-4d01-ae86-18440c68b51c",
+				"method": "PUT"
+			},
+			{
+				"id": "0e19f121-232f-478a-9253-641a3082a4ae",
+				"method": "DELETE"
+			},
+			{
+				"id": "34836c99-9108-4562-9d6d-161b0faf54c6",
+				"method": "DELETE"
+			},
+			{
+				"id": "bef0d076-11a1-4890-a6c5-1e65b5c392a9",
+				"method": "DELETE"
+			},
+			{
+				"id": "da84091c-a3a1-47e0-a82d-b0f0e7f522ee",
+				"method": "DELETE"
+			},
+			{
+				"id": "66f3aa19-993d-4f75-826f-704dfe86a4d5",
+				"method": "DELETE"
+			},
+			{
+				"id": "647629b5-ce7b-41db-8bbf-b3bebdeb1835",
+				"method": "GET"
+			},
+			{
+				"id": "4d5688e5-0bf6-404f-b003-a8fc85fc5ea2",
+				"method": "POST"
+			},
+			{
+				"id": "68d670be-b56b-4296-8462-69b87120424c",
+				"method": "POST"
+			},
+			{
+				"id": "e5096c5a-bb0e-4ee2-bd87-da4cbcdbb179",
+				"method": "POST"
+			},
+			{
+				"id": "5049d8d6-43b1-4fc0-a795-a738c2349821",
+				"method": "POST"
+			},
+			{
+				"id": "186338b2-d12f-4334-9a24-0d435c7dd958",
+				"method": "POST"
+			},
+			{
+				"id": "7db1e0c1-2c8a-4cd6-9ede-f5ef1cda5b82",
+				"method": "DELETE"
+			},
+			{
+				"id": "98460a73-525a-48d6-9144-40391a4df975",
+				"method": "POST"
+			},
+			{
+				"id": "7db4f132-cc76-40ab-8842-05d3d8317016",
+				"method": "POST"
+			},
+			{
+				"id": "0cb5102b-e34f-4ca4-845d-eb1092a97e9a",
+				"method": "POST"
+			},
+			{
+				"id": "4f1d8273-25ba-47cf-af05-5a03a62488e7",
+				"method": "GET"
+			},
+			{
+				"id": "79a3cf89-8c92-4b6b-aae0-f5a770af8146",
+				"method": "GET"
+			},
+			{
+				"id": "37eceddc-4087-496e-bab6-9ca2df6e54ea",
+				"method": "POST"
+			},
+			{
+				"id": "aa9abedf-6533-44b8-826e-c683d1a6465c",
+				"method": "POST"
+			},
+			{
+				"id": "ba916d70-20b9-4f0b-88d8-5064ff2237a4",
+				"method": "POST"
+			},
+			{
+				"id": "ee857c84-073a-46cc-b2d4-45193756dc2b",
+				"method": "POST"
+			},
+			{
+				"id": "0f350f87-5535-4c7b-8267-ad8e96802f4b",
+				"method": "GET"
+			},
+			{
+				"id": "194cd744-818b-4448-b05c-9b4541f2d984",
+				"method": "GET"
+			},
+			{
+				"id": "ab562605-303e-461a-8754-299eb167e0eb",
+				"method": "GET"
+			},
+			{
+				"id": "95da3c7f-469c-4e97-bce3-e47cbb273dcc",
+				"method": "GET"
+			},
+			{
+				"id": "f1e8b06b-501c-417e-85b3-37ba98fd0402",
+				"method": "PUT"
+			},
+			{
+				"id": "b5e9f357-8f07-4fa0-8b0a-e1809d3ab507",
+				"method": "PUT"
+			},
+			{
+				"id": "8fd3e559-da46-4b94-b765-be5894422078",
+				"method": "PUT"
+			},
+			{
+				"id": "f8bffe12-ea5c-48d9-9169-ae1fa928cb79",
+				"method": "GET"
+			},
+			{
+				"id": "d6c5011c-cd53-4418-a1a1-58214af93e81",
+				"method": "POST"
+			},
+			{
+				"id": "7d1772a4-bb8d-4b02-9384-a34ccfc0044d",
+				"method": "POST"
+			},
+			{
+				"id": "7cb071d8-950b-498c-9850-d210c3a4455a",
+				"method": "POST"
+			},
+			{
+				"id": "35fbe8bb-d8f7-4087-9c65-fd966688c371",
+				"method": "PUT"
+			},
+			{
+				"id": "7577fa52-7855-4076-8435-ca8c475e1017",
+				"method": "DELETE"
+			},
+			{
+				"id": "b0326cd2-1eb0-4065-8fe4-6ae34961f484",
+				"method": "DELETE"
+			},
+			{
+				"id": "a5cf8d73-62d6-4fa0-adbd-3f9b51914ba4",
+				"method": "POST"
+			},
+			{
+				"id": "a1711306-74cb-4708-92b1-9a90b276471f",
+				"method": "POST"
+			},
+			{
+				"id": "5b3941dc-a159-4e98-b4ba-6e17126769a1",
+				"method": "POST"
+			},
+			{
+				"id": "e254493c-916c-4bed-9f5b-928802db6f9f",
+				"method": "POST"
+			},
+			{
+				"id": "8fbe6081-b5c6-48cb-92e0-f6518dfd6e7f",
+				"method": "POST"
+			},
+			{
+				"id": "7ed83722-de72-4f1f-bec5-c0d5e6f0d924",
+				"method": "POST"
+			},
+			{
+				"id": "d1bb4d0a-265d-41bd-a393-7895225458d6",
+				"method": "POST"
+			},
+			{
+				"id": "6b22ac45-2831-4f69-a54e-060af72afa0d",
+				"method": "POST"
+			},
+			{
+				"id": "e6e1913e-580c-4136-aab2-929830fddd9c",
+				"method": "POST"
+			},
+			{
+				"id": "f0786d11-5dc8-4f97-8021-16e0ccc594d7",
+				"method": "POST"
+			},
+			{
+				"id": "4a3899bc-9832-4efe-809b-1e7ed6393368",
+				"method": "POST"
+			},
+			{
+				"id": "671482af-1d1e-4c93-a209-1ce885201202",
+				"method": "POST"
+			},
+			{
+				"id": "a0d9bed5-94bd-42be-bd07-5b89f28e030c",
+				"method": "POST"
+			},
+			{
+				"id": "1dc6fa6f-610d-425f-aad1-fbbfeee91106",
+				"method": "POST"
+			},
+			{
+				"id": "7a1dd1b9-7e61-49c3-8ed1-dec799beb72a",
+				"method": "POST"
+			},
+			{
+				"id": "54602fb3-d435-48bd-bfdb-85d6c94cf392",
+				"method": "POST"
+			},
+			{
+				"id": "2528069a-6203-48d4-85a3-907f4370e062",
+				"method": "GET"
+			},
+			{
+				"id": "cefc47a2-2ac4-497b-8559-dfde2ae85b62",
+				"method": "GET"
+			},
+			{
+				"id": "fdbb88aa-e262-4600-abe8-37e79db80959",
+				"method": "GET"
+			},
+			{
+				"id": "d1d1e226-9623-4927-bacc-ac3775ec1359",
+				"method": "PUT"
+			},
+			{
+				"id": "6d9b1ae3-0616-4c04-84bc-700b6629d3e1",
+				"method": "PUT"
+			},
+			{
+				"id": "249eeec0-dc99-406a-9fe3-59fc9b556ad2",
+				"method": "PUT"
+			},
+			{
+				"id": "f00d54cf-4ba0-47de-b17d-0b928c27ab98",
+				"method": "GET"
+			},
+			{
+				"id": "765c46d8-c4a7-4ff6-8c0c-95941383ea6d",
+				"method": "GET"
+			},
+			{
+				"id": "09cfc55c-0905-4bee-b33f-67a0a6be719d",
+				"method": "POST"
+			},
+			{
+				"id": "091f0688-90c9-4fc3-be9d-b314976c7f76",
+				"method": "POST"
+			},
+			{
+				"id": "aa0d4f38-bd75-4316-823c-7eae734c3c8b",
+				"method": "POST"
+			},
+			{
+				"id": "3c814fb6-7dde-40b9-92c4-9011fedba580",
+				"method": "POST"
+			},
+			{
+				"id": "3f041a93-d730-4829-aea2-17d9e5fdb479",
+				"method": "POST"
+			},
+			{
+				"id": "f608c678-a11b-4067-a625-d476065bf0d9",
+				"method": "POST"
+			},
+			{
+				"id": "22bed121-435e-4dcd-9aff-1fb0e13bbfb9",
+				"method": "POST"
+			},
+			{
+				"id": "c82692e0-29ab-4f65-9054-55b1203b4735",
+				"method": "POST"
+			},
+			{
+				"id": "ca4cd45b-ab88-492a-b1cd-8cf1ad11a9a3",
+				"method": "POST"
+			},
+			{
+				"id": "65a0d83d-3cdf-432f-a67f-2e7aab1da98c",
+				"method": "POST"
+			},
+			{
+				"id": "5a27623a-aaf2-4798-a79f-f1967fca4591",
+				"method": "POST"
+			},
+			{
+				"id": "8214badf-baf0-417a-a1e8-cac48e5c829e",
+				"method": "POST"
+			},
+			{
+				"id": "45b8670b-6d2b-4dfd-a2d0-034f8512046d",
+				"method": "POST"
+			},
+			{
+				"id": "8fd41893-1dcf-4985-a008-2af0ffb7a704",
+				"method": "POST"
+			},
+			{
+				"id": "f74ef9ff-5584-43bf-8b84-d627448f28c8",
+				"method": "POST"
+			},
+			{
+				"id": "8669d3df-580e-41ed-b51a-9350da0c86f9",
+				"method": "GET"
+			},
+			{
+				"id": "1ab6e56f-142c-419c-915a-37136f1c0ce7",
+				"method": "GET"
+			},
+			{
+				"id": "4db35a9e-b2e4-415c-a8b1-fcc6c19147a9",
+				"method": "GET"
+			},
+			{
+				"id": "6f4d9135-e599-4a72-b7ca-05e41f5dc8b2",
+				"method": "PUT"
+			},
+			{
+				"id": "f4c46484-dcaa-45a4-b261-0e02dd132267",
+				"method": "PUT"
+			},
+			{
+				"id": "1f814240-9bf6-4525-9ef3-a8e827a0944f",
+				"method": "PUT"
+			},
+			{
+				"id": "d5c93588-e1c9-4509-ae9a-8f7d382090a2",
+				"method": "PUT"
+			},
+			{
+				"id": "54131b96-6383-424d-a05a-13452e2c12a4",
+				"method": "PUT"
+			},
+			{
+				"id": "3b0f8e44-b3a9-4b96-8001-279a2c4e62a9",
+				"method": "PUT"
+			},
+			{
+				"id": "30e7b26f-6768-447a-b505-95e8093c95e3",
+				"method": "PUT"
+			},
+			{
+				"id": "079d7ac0-55f0-4b06-92b5-a88fa461d94d",
+				"method": "PUT"
+			},
+			{
+				"id": "a6d47135-8e26-40ca-9cad-03059c8f1f2f",
+				"method": "PUT"
+			},
+			{
+				"id": "803d9ad8-90ca-4772-99a4-bb59c062110a",
+				"method": "PUT"
+			},
+			{
+				"id": "674ca43f-aad9-44c7-b653-9010140450f5",
+				"method": "PUT"
+			},
+			{
+				"id": "d3c8ef59-d556-47ed-bf6f-bb1df8294ef2",
+				"method": "PUT"
+			},
+			{
+				"id": "dbc2307e-1f4a-4658-935f-f99a5315d066",
+				"method": "PUT"
+			},
+			{
+				"id": "c31f9c97-c293-4244-b805-827b2b299a97",
+				"method": "PUT"
+			},
+			{
+				"id": "d28ba16d-6137-4eb6-bc72-49ad12eb6f03",
+				"method": "PUT"
+			},
+			{
+				"id": "42021378-2864-4423-9b8d-6b4448d157af",
+				"method": "PUT"
+			},
+			{
+				"id": "6e7ee896-5bf2-46d3-bd30-73ffb5202684",
+				"method": "GET"
+			},
+			{
+				"id": "7139c5c5-56e1-47b4-87e5-536b0b29f970",
+				"method": "GET"
+			},
+			{
+				"id": "65e08387-d47c-4ba7-ab17-8a4caa78c74f",
+				"method": "POST"
+			},
+			{
+				"id": "f025ec01-976a-4eb0-80df-b21988d097e3",
+				"method": "GET"
+			},
+			{
+				"id": "bf30b5a9-8cc6-42dc-a14b-5447bd74e65d",
+				"method": "POST"
+			},
+			{
+				"id": "cd5dbaa4-6dcf-4926-a78d-e8073ab51f3f",
+				"method": "POST"
+			},
+			{
+				"id": "9ba0db6a-6662-4d2c-9f86-7196b78b3952",
+				"method": "PUT"
+			},
+			{
+				"id": "970f7123-6285-493d-8439-a1c77a6a553a",
+				"method": "PUT"
+			},
+			{
+				"id": "82ee2054-ed8a-489c-91aa-02d139f056d8",
+				"method": "DELETE"
+			},
+			{
+				"id": "ab94db18-8221-44f0-a575-5cf240829694",
+				"method": "DELETE"
+			},
+			{
+				"id": "9fab3381-9fc5-45f6-a634-67fa84667cc4",
+				"method": "POST"
+			},
+			{
+				"id": "b5349ce7-ab58-4417-ac3a-87eca376f80d",
+				"method": "POST"
+			},
+			{
+				"id": "8579014f-e1d6-4097-8ac1-fc8fceb85921",
+				"method": "DELETE"
+			},
+			{
+				"id": "a31c5033-9c7d-4b23-865f-38052e2947d8",
+				"method": "POST"
+			},
+			{
+				"id": "6c7c3e7b-0286-431a-809e-01eb9a79d13a",
+				"method": "DELETE"
+			},
+			{
+				"id": "6c6543e5-e17b-46a8-8c78-6598c00aa10f",
+				"method": "DELETE"
+			},
+			{
+				"id": "8eff222b-91d0-4250-a372-5373cdf362c7",
+				"method": "GET"
+			},
+			{
+				"id": "c59391bb-e0cd-4595-906b-66a4e12542b0",
+				"method": "GET"
+			},
+			{
+				"id": "d52c5967-ee04-4a2b-b74b-68f70618ee7b",
+				"method": "DELETE"
+			},
+			{
+				"id": "055257fc-708b-4517-b6b5-c4539afa747c",
+				"method": "DELETE"
+			},
+			{
+				"id": "b6644b24-d91e-43d1-947e-4909fef2b408",
+				"method": "GET"
+			},
+			{
+				"id": "b7109aa3-dc33-4ae1-889d-6068006f2eb9",
+				"method": "GET"
+			},
+			{
+				"id": "66fa35dc-581e-406d-92ad-2767b2d76872",
+				"method": "DELETE"
+			},
+			{
+				"id": "f1b4599f-9e30-495e-a5a9-da87784670c8",
+				"method": "DELETE"
+			},
+			{
+				"id": "c0e1e704-9701-42b7-8d8a-15681e5066b2",
+				"method": "GET"
+			},
+			{
+				"id": "436439a6-8aea-44d7-94cc-5d026908de29",
+				"method": "GET"
+			},
+			{
+				"id": "64d042f5-b324-4471-bd29-375f0f2afb68",
+				"method": "POST"
+			},
+			{
+				"id": "d793c204-a719-4346-9f60-7eaeb0b12328",
+				"method": "DELETE"
+			},
+			{
+				"id": "eb26b86f-3433-4818-9ff3-63bfba0b4533",
+				"method": "DELETE"
+			},
+			{
+				"id": "c47c2409-050c-4756-b9a6-d5a8bada94b7",
+				"method": "GET"
+			},
+			{
+				"id": "12f6b180-98e6-4e7a-9287-d0d4f2e0c6ef",
+				"method": "GET"
+			},
+			{
+				"id": "ff41c249-282d-4a84-b76f-d83e62334744",
+				"method": "GET"
+			},
+			{
+				"id": "eddd8cd0-f1d0-49ff-8698-37bf2eec7aa6",
+				"method": "DELETE"
+			},
+			{
+				"id": "e14028df-877f-425b-b4e8-a25935c3cfb0",
+				"method": "DELETE"
+			},
+			{
+				"id": "54a468bd-129f-4d74-849f-9ca0f95a961f",
+				"method": "GET"
+			},
+			{
+				"id": "dcfa4966-5084-4f6e-b32b-c6dd0e36e131",
+				"method": "GET"
+			},
+			{
+				"id": "ec6dd8ed-5226-4550-80c3-c6e28f905343",
+				"method": "GET"
+			},
+			{
+				"id": "4192b9ec-cde0-4887-a6fa-336f6112227e",
+				"method": "GET"
+			},
+			{
+				"id": "16b96594-143d-46b4-ad37-a583fb55cac5",
+				"method": "GET"
+			}
+		]
+	}
+}
