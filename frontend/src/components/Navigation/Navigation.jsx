@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import logo from "../../images/datum300.png";
+import logo from "../../images/whiteTrans.png";
 import "./Navigation.css";
 // import styles from "./Navigation.module.css";
 
@@ -17,12 +17,14 @@ function Navigation({ isLoaded }) {
                     </div>
                 </NavLink>
             </li>
-            {sessionUser && <NavLink to="/create-spot">Create a New Spot</NavLink>}
+            <li>
+            {sessionUser && <NavLink className="createSpot" to="/create-spot">Create a New Spot</NavLink>}
             {isLoaded && (
                     <li>
                         <ProfileButton user={sessionUser} />
                     </li>
             )}
+            </li>
         </ul>
     );
 }

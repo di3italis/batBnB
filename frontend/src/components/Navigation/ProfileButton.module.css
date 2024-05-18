@@ -1,0 +1,33 @@
+.profileButton{
+	position: flex;
+	top: 10px;
+	right: 10px;
+	border-radius: 10px;
+	background-color: #007bff;
+  z-index: 2; 
+}
+
+.button {
+    background-color: #007bff;
+}
+
+#dookie:hover {
+	background-color: #45a049;
+}
+
+.profile-dropdown {
+	background-color: red;
+	border-radius: 20px;
+}
+
+/* button { */
+/*     width: 100px; */
+/*     height: 40px; */
+/*     color: white; */
+/*     padding: 14px 20px; */
+/*     margin: 8px 0; */
+/*     border: none; */
+/*     border-radius: 4px; */
+/*     cursor: pointer; */
+/* } */
+/**/

@@ -9,8 +9,8 @@ export default function CreateSpot() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
-    const spot = null;
-    const update = false; 
+    // const spot = null;
+    // const update = false; 
     const [formData, setFormData] = useState({
         country: "",
         address: "",
@@ -167,7 +167,7 @@ export default function CreateSpot() {
         <div className={styles.createSpotPage}>
             <div className={styles.createSpotContainer}>
                 <h2 id="title">Create a new Spot</h2>
-                <h3>Where's your spot located?</h3>
+                <h3>Where&apos;s your spot located?</h3>
                 <p>Guests will only get your exact address once they booked a reservation.</p>
                 <div className={styles.formContainer}>
                 <form className={styles.form} onSubmit={handleSubmit}>
@@ -184,7 +184,7 @@ export default function CreateSpot() {
                     <p>Mention the best features of your space, any special amenities like fast wifi or parking, and what you love about the neighborhood.</p>
                     {inputs[6]}
                     <h3>Create a title for your spot</h3>
-                    <p>Catch guests' attention with a spot title that highlights what makes your place special.</p>
+                    <p>Catch guests&apos; attention with a spot title that highlights what makes your place special.</p>
                     {inputs[7]}
                     <h3>Set a base price for your spot</h3>
                     <p>Competitive pricing can help your listing stand out and rank higher in search results.</p>

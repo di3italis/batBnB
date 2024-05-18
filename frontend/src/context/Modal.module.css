@@ -78,11 +78,13 @@ input[type="email"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+.modalButton {
+    width: 50% ;
 
+}
 
 /* Styling for the submit button */
 button {
-    width: 100px;
     height: 40px;
     background-color: #007bff;
     /* background-color: #4CAF50; */
@@ -92,6 +94,10 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.deleteYes {
+    background-color: red !important;
 }
 
 button:hover {

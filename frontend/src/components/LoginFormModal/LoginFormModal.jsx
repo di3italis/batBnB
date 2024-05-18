@@ -65,8 +65,8 @@ function LoginFormModal() {
                         <e>The provided credentials were invalid</e>
                     )}
                 </div>
-                <button type="submit">Log In</button>
-                <button type="submit" onClick={handleDemoUserOnClick}>Demo User</button>
+                <button className={styles.modalButton} type="submit">Log In</button>
+                <button className={styles.modalButton} type="submit" onClick={handleDemoUserOnClick}>Demo User</button>
             </form>
         </>
     );

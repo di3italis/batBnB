@@ -95,7 +95,9 @@ const SpotDetail = () => {
                         </button>
                     </div>
                     {/* A. SPOTREVIEWS.JSX */}
-                    <SpotReviews spotId={spotId} />
+                    <div className={styles.reviewContainer}>
+                    <SpotReviews className={styles.reviewContainer} spotId={spotId} />
+                    </div>
                     {/* Z. SPOTREVIEWS.JSX */}
                 </div>
                 {/* Z. LOWER DETAILS */}

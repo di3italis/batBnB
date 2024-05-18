@@ -51,6 +51,7 @@ export default function ManageSpots() {
                 {Object.values(userSpotsArray).map((spot) => (
                     <div key={spot.id} className={styles.card}>
                         <SpotCard key={spot.id} spot={spot} />
+                        <div className={styles.buttons}>
                         <button
                             onClick={() => navigate(`/update-spot/${spot.id}`)}
                         >
@@ -62,6 +63,7 @@ export default function ManageSpots() {
                                 <DeleteSpotModal spotId={spot.id} />
                             }
                         />
+                        </div>
                     </div>
                 ))}
             </div>

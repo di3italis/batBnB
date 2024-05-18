@@ -34,13 +34,13 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1; /* this is the layer front to back, lower numbers are in the back */
+  z-index: 1;
 }
 
 #logo {
-	height: 80px;
+	height: 20px;
 	margin: 20px;
-	display: absolute;
+	display: flex;
 }
 
 h1 {
