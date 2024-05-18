@@ -11,20 +11,24 @@ function Navigation({ isLoaded }) {
     return (
         <ul className="navContainer">
             <li>
-               <NavLink to="/">
+                <NavLink to="/">
                     <div className="logoLink">
-                        <img className="logo" src={logo} alt='BatBnB'/>
+                        <img className="logo" src={logo} alt="BatBnB" />
                     </div>
                 </NavLink>
             </li>
+            <ul className="navLinks">
             <li>
-            {sessionUser && <NavLink className="createSpot" to="/create-spot">Create a New Spot</NavLink>}
-            {isLoaded && (
-                    <li>
-                        <ProfileButton user={sessionUser} />
-                    </li>
-            )}
+                {sessionUser && (
+                    <NavLink className="createSpot" to="/create-spot">
+                        Create a New Spot
+                    </NavLink>
+                )}
             </li>
+            <li>
+                <ProfileButton user={sessionUser} />
+            </li>
+            </ul>
         </ul>
     );
 }

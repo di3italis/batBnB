@@ -52,9 +52,8 @@ function ProfileButton({ user }) {
             <ul className={ulClassName} ref={ulRef}>
                 {user ? (
                     <>
-                        <li>{user.username}</li>
                         <li>
-                            {"Hello,"} {user.firstName} {user.lastName}
+                            {"Hello,"} {user.firstName}
                         </li>
                         <li>{user.email}</li>
                         <li className="manage-spots-container">
