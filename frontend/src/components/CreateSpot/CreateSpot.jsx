@@ -171,7 +171,6 @@ export default function CreateSpot() {
                 <p>Guests will only get your exact address once they booked a reservation.</p>
                 <div className={styles.formContainer}>
                 <form className={styles.form} onSubmit={handleSubmit}>
-
                     {inputs[0]}
                     {inputs[1]}
                     {inputs[2]}
