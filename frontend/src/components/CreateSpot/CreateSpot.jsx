@@ -49,17 +49,19 @@ export default function CreateSpot() {
         "Image URL", // no label
     ];
 
-    const inputs = inputNames.map((name, index) => ({
-        name,
-        label: (index === 6 || index > 7) ? null :
-                (index === 1) ? "Street Address" :
-                placeholders[index],
-        placeholder: update ? spot[name] : placeholders[index],
-        // type: type[index],
-        type: name === 'description' ? 'textarea' :
-              name === 'price' ? 'number' :
-              'text',
-    }));
+    // const inputs = inputNames.map((name, index) => ({
+    //     name,
+    //     label: (index === 6 || index > 7) ? null :
+    //             (index === 1) ? "Street Address" :
+    //             placeholders[index],
+    //     placeholder: update ? spot[name] : placeholders[index],
+    //     // type: type[index],
+    //     type: name === 'description' ? 'textarea' :
+    //           name === 'price' ? 'number' :
+    //           'text',
+    // }));
+
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -138,81 +140,69 @@ export default function CreateSpot() {
         setErrors(fieldCheck);
     };
 
+    const inputs = inputNames.map((name, index) => (
+        <div key={name} className={styles[name]}>
+            {(index !== 6 && index <= 7) && <label htmlFor={name}>{placeholders[index]}</label>}
+            {name === "description" ? (
+                <textarea
+                    name={name}
+                    value={formData[name]}
+                    placeholder={placeholders[index]}
+                    onChange={handleInputChange}
+                />
+            ) : (
+                <input
+                    name={name}
+                    type={name === "price" ? "number" : "text"}
+                    value={formData[name]}
+                    placeholder={placeholders[index]}
+                    onChange={handleInputChange}
+                />
+            )}
+            {errors[name] && <span className={styles.error}>{errors[name]}</span>}
+        </div>
+    ));
+
     return (
         <div className={styles.createSpotPage}>
-            <form className={styles.createSpotForm} onSubmit={handleSubmit}>
+            <div className={styles.createSpotContainer}>
                 <h2 id="title">Create a new Spot</h2>
-                <h3 id="subtitle">Where&apos;s your spot located?</h3>
-                <p id="dont-worry">
-                    Guests will only get your exact address once they booked a
-                    reservation.
-                </p>
-                <div className={styles.inputs}>
-                    {inputs.map((input) => (
-                        <div key={input.name} className={styles.singleInput}>
-                            {input.label && (
-                                <label htmlFor={input.name}>
-                                    {input.label}
-                                </label>
-                            )}
-                            {input.type !== "textarea" ? (
-                                <input
-                                    className={styles[input.name]}
-                                    name={input.name}
-                                    type={input.type}
-                                    value={formData[input.name]}
-                                    placeholder={input.placeholder}
-                                    onChange={handleInputChange}
-                                />
-                            ) : (
-                                <textarea
-                                    className={styles.input}
-                                    name={input.name}
-                                    value={formData[input.name]}
-                                    placeholder={input.placeholder}
-                                    onChange={handleInputChange}
-                                />
-                            )}
-                            {errors[input.name] && (
-                                <span className={styles.error}>
-                                    {errors[input.name]}
-                                </span>
-                            )}
-                        </div>
-                    ))}
-                    <div className={styles.descriptionSection}>
-                        <h3>Describe your place to guests</h3>
-                        <p>
-                            Mention the best features of your space, any special
-                            amentities like fast wifi or parking, and what you
-                            love about the neighborhood.
-                        </p>
+                <h3>Where's your spot located?</h3>
+                <p>Guests will only get your exact address once they booked a reservation.</p>
+                <div className={styles.formContainer}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+
+                    {inputs[0]}
+                    {inputs[1]}
+                    {inputs[2]}
+                    {inputs[3]}
+                    <div className={styles.latlng}>
+                    {inputs[4]}
+                    {inputs[5]}
                     </div>
-                    <div className={styles.titleSection}>
-                        <h3>Create a title for your spot</h3>
-                        <p id="title">
-                            Catch guests&apos; attention with a spot title that
-                            highlights what makes your place special.
-                        </p>
-                    </div>
-                    <section className={styles.priceSection}>
-                        <h3>Set a base price for your spot</h3>
-                        <p>
-                            Competitive pricing can help your listing stand out
-                            and rank higher in search results.
-                        </p>
-                    </section>
-                    <section className={styles.photoSection}>
-                        <h3>Liven up your spot with photos</h3>
-                        <p>
-                            Submit a link to at least one photo to publish your spot. 
-                        </p>
-                    </section>
+                    <h3>Describe your place to guests</h3>
+                    <p>Mention the best features of your space, any special amenities like fast wifi or parking, and what you love about the neighborhood.</p>
+                    {inputs[6]}
+                    <h3>Create a title for your spot</h3>
+                    <p>Catch guests' attention with a spot title that highlights what makes your place special.</p>
+                    {inputs[7]}
+                    <h3>Set a base price for your spot</h3>
+                    <p>Competitive pricing can help your listing stand out and rank higher in search results.</p>
+                    {inputs[8]}
+                    <h3>Liven up your spot with photos</h3>
+                    <p>Submit a link to at least one photo to publish your spot.</p>
+                    {inputs[9]}
+                    {inputs[10]}
+                    {inputs[11]}
+                    {inputs[12]}
+                    {inputs[13]}
                     <button className={styles.button} type="submit">
                         Create Spot
                     </button>
+                </form>
                 </div>
-            </form>
+            </div>
         </div>
     );
+
 } // default
