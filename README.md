@@ -1,7 +1,7 @@
 # Welcome to BatBnB
 ## BatBnB is a simplified AirBnB clone project for educational purposes.
 
-![Link Text](https://batbnb.s3.us-west-1.amazonaws.com/destroyedPallace/dpScreenshot.png)
+![Screenshot](https://i.ibb.co/QYTFgvD/Screenshot-2024-05-20-at-18-46-24.png)
 <sub>*Spot Detail page for Whispering Ruins a spot in the BatBnB universe*</sub>
 
 <hr/>
@@ -22,3 +22,8 @@ The database is a PostgresQL database that stores all the data for the website. 
 ## Express Server
 The Express server is a Node.js application that communicates with the PostgresQL database. It is responsible for handling all the requests from the frontend, validating data, running basic calculations, and returning the appropriate data.
 
+To Run:
+Clone Repo
+npm install in root, frontend, backend
+backend: `npm start build` 
+frontend: `npm run dev`
