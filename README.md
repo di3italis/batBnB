@@ -22,7 +22,7 @@ The database is a PostgresQL database that stores all the data for the website. 
 ## Express Server
 The Express server is a Node.js application that communicates with the PostgresQL database. It is responsible for handling all the requests from the frontend, validating data, running basic calculations, and returning the appropriate data.
 
-To Run:
+## To Run:
 Clone Repo
 npm install in root, frontend, backend
 backend: `npm start build` 
