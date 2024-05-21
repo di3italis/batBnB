@@ -1,3 +1,4 @@
+// Modal.jsx
 import ReactDOM from 'react-dom';
 import { useRef, createContext, useContext, useState } from 'react';
 import styles from"./Modal.module.css";

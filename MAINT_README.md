@@ -1,3 +1,9 @@
+### Project Resources
+1. CRUD opps practice: /Users/vegaprime/takashiShumamira/5M/5w31/reduxReports
+2. create store practice in week 29. https://github.com/appacademy/aa15-react-redux-store
+maybe include some YT vids here
+
+
 //something about postman xsrf variable
 xsrftoken
 var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");

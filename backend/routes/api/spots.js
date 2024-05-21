@@ -425,7 +425,7 @@ router.post(
 
             const newReview = await Review.create({
                 userId: req.user.id,
-                spotId,
+                spotId: Number(spotId),
                 review,
                 stars,
             });

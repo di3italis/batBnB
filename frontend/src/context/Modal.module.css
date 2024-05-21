@@ -67,6 +67,10 @@ label {
     font-weight: lighter;
 }
 
+input {
+    width: 100%
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -78,11 +82,13 @@ input[type="email"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+.modalButton {
+    width: 50% ;
 
+}
 
 /* Styling for the submit button */
 button {
-    width: 100px;
     height: 40px;
     background-color: #007bff;
     /* background-color: #4CAF50; */
@@ -92,6 +98,19 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button.disabled:hover {
+    background-color: #ccc;
+}
+
+.deleteYes {
+    background-color: red !important;
 }
 
 button:hover {
@@ -110,8 +129,8 @@ button:hover {
     color: red;
 }
 
-e {
-    position: absolute;
+.error {
+    /* position: absolute; */
     color: red;
 }
 

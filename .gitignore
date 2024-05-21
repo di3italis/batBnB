@@ -10,3 +10,6 @@ NEW*
 scratch*
 !dist
 bu-*
+frontAuth
+hooks/
+miscfiles
