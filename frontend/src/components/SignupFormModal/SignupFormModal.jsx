@@ -102,7 +102,6 @@ function SignupFormModal() {
                 <ul>
                     {Object.entries(inputs).map(([key, value]) => (
                         <li key={key}>
-                            <label>
                                 <input 
                                     className={errors[key] ? styles.inputError : {} }
                                     type={key === "password" || key === "confirmPassword" ? "password" : "text"}
@@ -112,7 +111,6 @@ function SignupFormModal() {
                                     onChange={handleInputChange}
                                     required
                                 />
-                            </label>
                         </li>
                     ))}
                     <button className={`${!submittable ? styles.disabled : ""} `} type="submit" disabled={!submittable}>Sign Up</button>
