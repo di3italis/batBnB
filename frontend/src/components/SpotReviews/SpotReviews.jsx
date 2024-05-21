@@ -53,7 +53,7 @@ export default function SpotReviews({ spotId }) {
                             : parseFloat(spot.avgRating).toFixed(1)}{" "}
                     </>
                 )}
-                {spot?.numReviews ? <> · {spot.numReviews} </> : <> New</>}
+                {spot?.numReviews !== 0 ? <> · {spot.numReviews} </> : <> New</>}
                 {spot?.numReviews === 1 && <> Review</>}
                 {spot?.numReviews > 1 && <> Reviews</>}
             </div>

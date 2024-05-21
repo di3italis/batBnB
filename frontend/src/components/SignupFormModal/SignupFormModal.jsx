@@ -1,4 +1,5 @@
-import { useState } from "react";
+// SignupFormModal.jsx
+import { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import * as sessionActions from "../../store/session";
@@ -7,13 +8,8 @@ import styles from '../../context/Modal.module.css'
 
 function SignupFormModal() {
     const dispatch = useDispatch();
-    // const [username, setUsername] = useState("");
-    // const [firstName, setFirstName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({});
+    const [submittable, setSubmittable] = useState(false);
     const { closeModal } = useModal();
      const [inputs, setInputs] = useState({
         username: '',
@@ -24,22 +20,64 @@ function SignupFormModal() {
         confirmPassword: ''
     });
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setInputs(prev => ({ ...prev, [name]: value }));
-        //if errors exist, remove them when user starts typing
-        if (errors.name) setErrors(prevErrors => ({ ...prevErrors, [name]: "" }));
-    };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+
+    const validateForm = useCallback(() => {
+        let isValid = true;
+
+        if (!inputs.username.length || inputs.username.length < 4) {
+            // setErrors(prevErrors => ({
+            //     ...prevErrors,
+            //     username: "Username must be at least 4 characters",
+            // }));
+            isValid = false;
+        }
+        for (let key in inputs) {
+            if (!inputs[key].length) {
+                // setErrors(prevErrors => ({
+                //     ...prevErrors,
+                //     [key]: `${key[0].toUpperCase() + key.slice(1)} required`,
+                // }));
+                isValid = false;
+            }
+        }
+        if (inputs.password.length < 6) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                password:
+                    "Password must be at least 6 characters",
+            }));
+            isValid = false;
+        }
         if (inputs.password !== inputs.confirmPassword) {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 confirmPassword:
                     "Confirm Password field must be the same as the Password field",
             }));
+            isValid = false;
         } 
+
+        setSubmittable(isValid);
+        return isValid;
+    }, [inputs]);
+
+    useEffect(() => {
+        validateForm();
+    }, [inputs, validateForm]);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setInputs(prev => ({ ...prev, [name]: value }));
+        //if errors exist, remove them when user starts typing
+        if (errors.name) {
+            setErrors(prevErrors => ({ ...prevErrors, [name]: "" }));
+        }   
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!validateForm()) return;
             try {
                 await dispatch(sessionActions.signup(inputs));
                 closeModal();
@@ -47,6 +85,7 @@ function SignupFormModal() {
                 const data = await res.json();
                 if (data?.errors) {
                     setErrors(data.errors)
+                    setSubmittable(false);
                     // clear inputs if there are errors
                     Object.keys(data.errors).forEach((key) => {
                         setInputs(prev => ({...prev, [key]: "" }));
@@ -76,7 +115,7 @@ function SignupFormModal() {
                             </label>
                         </li>
                     ))}
-                    <button type="submit">Sign Up</button>
+                    <button className={`${!submittable ? styles.disabled : ""} `} type="submit" disabled={!submittable}>Sign Up</button>
                 </ul>
             </form>
         </>
