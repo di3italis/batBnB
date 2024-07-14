@@ -226,6 +226,7 @@ const spotsReducer = (state = initialState, action) => {
         }
         // -------------------GET CURRENT USER SPOTS-------------------
         case GET_CURRENT_USER_SPOTS: {
+            // structured clone to avoid mutating state. Creates deep copy of an object
             // const newState = structuredClone(state);
             const newState = {};
             action.payload.forEach((spot) => {
@@ -259,12 +260,14 @@ const spotsReducer = (state = initialState, action) => {
         }
         // -------------------DELETE SPOT-------------------
         case DELETE_SPOT: {
+            // structured clone to avoid mutating state. Creates deep copy of an object
             const newState = structuredClone(state);
             delete newState[action.spotId];
             return newState;
         }
         // --------------UPDATE SPOT---------------
         case UPDATE_SPOT: {
+            // structured clone to avoid mutating state. Creates deep copy of an object
             const newState = structuredClone(state);
             newState[action.spot.id] = action.spot;
             return newState;
