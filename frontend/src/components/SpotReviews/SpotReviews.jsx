@@ -1,4 +1,4 @@
-// SpotDetail.jsx
+// SpotReviews.jsx
 import * as reviewActions from "../../store/reviews";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
